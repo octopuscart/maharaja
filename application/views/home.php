@@ -5,34 +5,7 @@ $this->load->view('layout/header');
 <!--<div class="main-slider2">
     <div class="bend niceties preview-1">
         <div id="ensign-nivoslider-3" class="slides">
-<?php
-foreach ($sliders as $key => $value) {
-    ?>
-                                                                                                                                                                                <img src="<?php echo imageserverslider . $value->file_name; ?>" alt="" title="#slider-direction-<?php echo $key; ?>" />
-    <?php
-}
-?>        
-        </div>
 
-
-<?php
-foreach ($sliders as $key => $value) {
-    ?>
-                                                                                                                                                                            <div id="slider-direction-<?php echo $key; ?>" class="t-cn slider-direction">
-                                                                                                                                                                                <div class="slider-content t-lfl s-tb slider-1">
-                                                                                                                                                                                    <div class="title-container s-tb-c">
-                                                                                                                                                                                        <h2 class="title<?php echo $key; ?>" style="color:<?php echo $value->title_color; ?>">
-    <?php echo $value->title; ?>
-                                                                                                                                                                                        </h2>
-                                                                                                                                                                                        <p style="color:<?php echo $value->line1_color; ?>"><?php echo $value->line1; ?></p>
-                                                                                                                                                                                        <p style="color:<?php echo $value->line2_color; ?>"><?php echo $value->line2; ?></p>
-                                                                                                                                                                                        <a href="<?php echo $value->link; ?>" class="btn-shop-now-fill-slider"><?php echo $value->link_text; ?></a>
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                </div>
-                                                                                                                                                                            </div>
-    <?php
-}
-?>
 
     </div>
 </div>-->

@@ -83,119 +83,17 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 
     //update cart
     $scope.updateCart = function (productobj, oper) {
-        if (oper == 'sub') {
-            if (productobj.quantity == 1) {
-            } else {
-                productobj.quantity = Number(productobj.quantity) - 1;
-            }
-        }
-        if (oper == 'add') {
-            if (productobj.quantity > 5) {
-            } else {
-                productobj.quantity = Number(productobj.quantity) + 1;
-            }
-        }
-        console.log(productobj.quantity)
-        $http.get(globlecart + "Put/" + productobj.product_id + "/" + productobj.quantity).then(function (rdata) {
-            $scope.getCartData();
-        }, function (r) {
-        })
+       
     }
 
     //add cart product
     $scope.addToCart = function (product_id, quantity) {
-        var productdict = {
-            'product_id': product_id,
-            'quantity': quantity,
-        }
-        var form = new FormData()
-        form.append('product_id', product_id);
-        form.append('quantity', quantity);
-        swal({
-            title: 'Adding to Cart',
-            onOpen: function () {
-                swal.showLoading()
-            }
-        })
-        $http.post(globlecart, form).then(function (rdata) {
-            $(".cartquantitysearch").text("1");
-            swal.close();
-            $scope.getCartData();
-            swal({
-                title: 'Added To Cart',
-                type: 'success',
-                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, ' ' + globlecurrency + '  ') + ", Quantity: " + rdata.data.quantity + "</p>",
-                imageUrl: rdata.data.file_name,
-                imageWidth: 100,
-                timer: 1500,
-//                 background: '#fff url(//bit.ly/1Nqn9HU)',
-                imageAlt: 'Custom image',
-                showConfirmButton: false,
-                animation: true
-
-            }).then(
-                    function () {
-                    },
-                    function (dismiss) {
-                        if (dismiss === 'timer') {
-                        }
-                    }
-            )
-        }, function () {
-            swal.close();
-            swal({
-                title: 'Something Wrong..',
-            })
-        });
+//       
     }
 
 
     $scope.addToBuy = function (product_id, quantity) {
-        var productdict = {
-            'product_id': product_id,
-            'quantity': quantity,
-        }
-        var form = new FormData()
-        form.append('product_id', product_id);
-        form.append('quantity', quantity);
-        swal({
-            title: 'Adding to Cart',
-            onOpen: function () {
-                swal.showLoading()
-            }
-        })
-        $http.post(globlecart, form).then(function (rdata) {
-            $(".cartquantitysearch").text("1");
-            swal.close();
-            $scope.getCartData();
-            swal({
-                title: 'Added To Cart',
-                type: 'success',
-                html: "<p class='swalproductdetail'><span>" + rdata.data.title + "</span><br>" + "Total Price: " + currencyfilter(rdata.data.total_price, ' ' + globlecurrency + '  ') + ", Quantity: " + rdata.data.quantity + "</p>",
-                imageUrl: rdata.data.file_name,
-                imageWidth: 100,
-                timer: 1500,
-//                 background: '#fff url(//bit.ly/1Nqn9HU)',
-                imageAlt: 'Custom image',
-                showConfirmButton: false,
-                animation: true
-
-            }).then(
-                    function () {
-                        window.location = baseurl + "CartGuest/checkoutInit";
-                    },
-                    function (dismiss) {
-                        if (dismiss === 'timer') {
-                            window.location = baseurl + "CartGuest/checkoutInit";
-                        }
-                    }
-            )
-        }, function () {
-            swal.close();
-            swal({
-                title: 'Something Wrong..',
-            })
-        });
+        
     }
 
     $scope.avaiblecredits = avaiblecredits;

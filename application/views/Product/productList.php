@@ -199,10 +199,11 @@ $image2 = "";
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder {{globleCartData.products[product.id] ? 'activeproduct': '' }} {{(product.hasvarient && globleCartData.products[product.varients[product.selectedobject].id]) ? 'activeproduct': '' }}"  ng-repeat="(k, product) in productResults.products" >
                                 <div class="product-box1" >
                                     <div class="addedtocard"><i class="fa fa-cart-plus"></i></div>
+                                    
 
-                                    <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
-                                         background-position: center;">
-
+                                    <div class="product-img-holder" >
+<img src="<?php echo base_url(); ?>assets/images/defaultProduct.png" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
+                                         background-position: center;" />
                                     </div>
 
                                     <div class="product-content-holder" ng-if="product.hasvarient == 0">
