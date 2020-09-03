@@ -112,7 +112,7 @@ class Api extends REST_Controller {
 //        $query = $this->db->select('title, id, file_name, price')->from('products')->where("title LIKE '%$keyword%' ")->get();
 //        $searchobj = $query->result_array();
 
-        $pquery = "SELECT title, file_name, id, price from products where title like '%$query%'";
+        $pquery = "SELECT title, file_name, id, price from products where title like '%$query%' where status = 1";
         $attr_products = $this->Product_model->query_exe($pquery);
 
 
