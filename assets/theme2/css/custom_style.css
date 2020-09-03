@@ -1195,6 +1195,7 @@ b.barcomb-list {
 
 .searchtext{
     line-height: 40px;
+    font-size: 11px;
 }
 .searchbody .input-group{
     text-align: center;
