@@ -32,12 +32,14 @@ class Product extends CI_Controller {
 
         $categoriesString = $this->Product_model->stringCategories($primaryparent);
         $categoriesString = trim($categoriesString, ",");
+        $producttgs = array();
+        if ($categoriesString) {
+            $this->db->where("id in ($categoriesString)");
+            $query = $this->db->get('category');
+            $producttgs = $query->result_array();
+        }
 
-        $this->db->where("id in ($categoriesString)");
-        $query = $this->db->get('category');
-        $producttgs = $query->result_array();
-        
-       $data['producttag'] = $producttgs;
+        $data['producttag'] = $producttgs;
 
         $data["categories"] = $categories;
         $data["category"] = $cat_id;
@@ -225,9 +227,9 @@ class Product extends CI_Controller {
                 $pquery = 'update  products set variant_product_of = ' . $ids . '  where short_description =  "' . $description . '" and id!=' . $ids;
                 # $query = $this->db->query($pquery);
             }
-        
         }
     }
+
     function updateCategories() {
         echo $pquery = "select id, category_name from category ";
         $attr_products = $this->Product_model->query_exe($pquery);
@@ -236,12 +238,10 @@ class Product extends CI_Controller {
             echo "<br/>";
             $ids = $value['id'];
             $category_name = $value['category_name'];
-           
-        
-                $pquery = 'update  products set category_id = ' . $ids . '  where category_items_id =  "' . $category_name . '"';
+
+
+            $pquery = 'update  products set category_id = ' . $ids . '  where category_items_id =  "' . $category_name . '"';
 //                $query = $this->db->query($pquery);
-            
-            
         }
     }
 
