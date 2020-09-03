@@ -239,7 +239,7 @@ class Product extends CI_Controller {
            
         
                 $pquery = 'update  products set category_id = ' . $ids . '  where category_items_id =  "' . $category_name . '"';
-                $query = $this->db->query($pquery);
+//                $query = $this->db->query($pquery);
             
             
         }
