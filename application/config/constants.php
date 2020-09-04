@@ -21,7 +21,7 @@ switch ($baselink) {
 
 switch ($baselink) {
     case "http://localhost":
-        $adminlinkmain = $baselink . "/shopadmin";
+       $adminlinkmain = "https://admin.maharajamart.com/";
         break;
     case "http://192.168.1.2":
           $adminlinkmain = $baselink . "/shopadmin";

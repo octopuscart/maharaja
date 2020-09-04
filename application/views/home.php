@@ -163,13 +163,13 @@ $this->load->view('layout/header');
 
     <div class="container block52">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="    margin-top: 24px;">
-            <div class="banner-top-left col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://v1.maharajamart.com/contact/"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/become-vendor-1.jpg" alt=""></a></div>
-            <div class="banner-top-center col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://v1.maharajamart.com/delivery-around-hong-kong.html"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/hk-delivery-1.jpg" alt=""></a></div>
-            <div class="banner-top-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://v1.maharajamart.com/movie-ticket.html"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/favourite-banner-1.jpg" alt=""></a></div>
+            <div class="banner-top-left col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('contact');?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/become-vendor-1.jpg" alt=""></a></div>
+            <div class="banner-top-center col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('privacy-policy');?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/hk-delivery-1.jpg" alt=""></a></div>
+            <div class="banner-top-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajatickets.com/" target="_blank"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/favourite-banner-1.jpg" alt=""></a></div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style="    margin-top: 24px;">
-            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/boutique-collection-1.jpg" alt=""></div>
-            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://v1.maharajamart.com/posts/category/csr/"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/new_images/mosaic_banner/cares-shares-1.jpg" alt=""></a></div>
+            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/boutique-collection-1.jpg" alt=""></div>
+            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('/');?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/cares-shares-1.jpg" alt=""></a></div>
         </div>
     </div>
 
@@ -208,8 +208,8 @@ $this->load->view('layout/header');
 
     <div class="container">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="http://v1.maharajamart.com/deal-of-the-week.html"><img src="http://v1.maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
-            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://v1.maharajamart.com/deal-of-the-day.html"><img class="img-responsive" src="http://v1.maharajamart.com/pub/media/wysiwyg/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
+            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="<?php echo site_url('/');?>"><img src="<?php echo base_url(); ?>assets/images/ext/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
+            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('/');?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
         </div>
     </div>
 

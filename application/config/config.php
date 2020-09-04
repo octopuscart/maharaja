@@ -58,7 +58,7 @@ $config['rest_enable_keys'] = FALSE;
   |
  */
 $config['index_page'] = strpos($baselink, '192.168') ? 'index.php/' : '';
-//$config['index_page'] = strpos($baselink, 'localhost') ? 'index.php/' : '';
+$config['index_page'] = strpos($baselink, 'localhost') ? 'index.php/' : '';
 
 /*
   |--------------------------------------------------------------------------

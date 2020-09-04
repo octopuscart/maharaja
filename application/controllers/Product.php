@@ -213,35 +213,61 @@ class Product extends CI_Controller {
     }
 
     function testp() {
-        echo $pquery = "select id, short_description from products where status = 1 group by short_description ";
+        echo $pquery = "select id, short_description, category_id from products where status = 1 group by short_description, category_id order by id ";
         $attr_products = $this->Product_model->query_exe($pquery);
         echo "<pre>";
         foreach ($attr_products as $key => $value) {
             echo "<br/>";
             $ids = $value['id'];
             $description = $value['short_description'];
-            echo $pquery = 'select id, short_description from products where short_description = "' . $description . '" and id!=' . $ids;
+              $catid = $value['category_id'];
+            echo $pquery = 'select id, short_description, category_id from products where short_description = "' . $description . '" and category_id='.$catid.'  and id!=' . $ids;
             $despro = $this->Product_model->query_exe($pquery);
 
             foreach ($despro as $skey => $svalue) {
-                $pquery = 'update  products set variant_product_of = ' . $ids . '  where short_description =  "' . $description . '" and id!=' . $ids;
-                # $query = $this->db->query($pquery);
+              
+                $pquery = 'update  products set variant_product_of = ' . $ids . '  where short_description =  "' . $description . '" and category_id='.$catid.'  and id!=' . $ids;
+                $query = $this->db->query($pquery);
             }
         }
     }
 
     function updateCategories() {
-        echo $pquery = "select id, category_name from category ";
+        echo $pquery = "select id, category_name from category where parent_id='0'";
         $attr_products = $this->Product_model->query_exe($pquery);
         echo "<pre>";
         foreach ($attr_products as $key => $value) {
             echo "<br/>";
+            echo $ids = $value['id'];
+            echo $category_name = $value['category_name'];
+
+            $pquery = 'update  category set parent_id = ' . $ids . '  where parent_id =  "' . $category_name . '"';
+
+            $query = $this->db->query($pquery);
+        }
+    }
+
+    function updateCategorpProduct() {
+        echo $pquery = "select id, category_name from category where parent_id='0'";
+        $attr_products = $this->Product_model->query_exe($pquery);
+        echo "<pre>";
+        foreach ($attr_products as $key => $value) {
             $ids = $value['id'];
-            $category_name = $value['category_name'];
+            $pquery = "select id, category_name from category where parent_id='$ids'";
+            $subattr_products = $this->Product_model->query_exe($pquery);
+            foreach ($subattr_products as $skey => $svalue) {
 
+                echo "<br/>";
+                $category_name = $value['category_name'];
+                $subcategory_name = $svalue['category_name'];
+                $idss = $svalue['id'];
+               echo  $catetitle  = $category_name.'-'. $subcategory_name;
+               
+                //$pquery = 'update  category set parent_id = ' . $ids . '  where parent_id =  "' . $category_name . '"';
 
-            $pquery = 'update  products set category_id = ' . $ids . '  where category_items_id =  "' . $category_name . '"';
-//                $query = $this->db->query($pquery);
+                $pquery = 'update  products set category_id = ' . $idss . '  where category_items_id =  "' . $catetitle . '"';
+                $query = $this->db->query($pquery);
+            }
         }
     }
 
