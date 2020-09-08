@@ -120,7 +120,7 @@ class Api extends REST_Controller {
     }
 
     public function prefetchdata_get() {
-        $pquery = "SELECT title, file_name, id, price from products limit 0, 50";
+        $pquery = "SELECT title, file_name, id, price from products ";
         $attr_products = $this->Product_model->query_exe($pquery);
         $this->response($attr_products);
     }

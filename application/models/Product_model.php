@@ -116,23 +116,14 @@ where pa.product_id = $product_id group by attribute_value_id";
         $product = $query->result_array();
         if (count($product)) {
             $productobj = $product[0];
-            if ($custom_id != 0) {
-                $this->db->where('id', $custom_id);
-                $query = $this->db->get('custome_items');
-                $customeitem = $query->row();
-                $productobj['price'] = $customeitem->price;
-                $productobj['regular_price'] = $customeitem->price;
-                $productobj['item_name'] = $customeitem->item_name;
-            }
+          
             $productobj['item_id'] = $custom_id;
             $productattr = $this->singleProductAttrs($productobj['id']);
             $productobj['attrs'] = $productattr;
 
-            $this->db->where('id', $productobj['user_id']);
-            $query = $this->db->get('admin_users');
-            $userobj = $query->result_array()[0];
+           
 
-            $productobj['vendor'] = $userobj['first_name'] . " " . $userobj['last_name'];
+            $productobj['vendor'] = "";
             return $productobj;
         } else {
             return FALSE;
@@ -825,7 +816,7 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
             $quantity = $value['quantity'];
             $product_id = $value['product_id'];
 
-            $product_details = $this->productDetails($product_id, $item_id);
+            $product_details = $this->productDetails($product_id, '');
             $product_dict = array(
                 'title' => $product_details['title'],
                 'price' => $product_details['price'],
