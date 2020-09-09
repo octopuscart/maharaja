@@ -286,7 +286,16 @@ class CartGuest extends CI_Controller {
             $this->session->unset_userdata($newdata);
             $this->session->sess_destroy();
 
-            redirect('Order/orderdetailsguest/' . $orderkey);
+             switch ($paymentmathod) {
+                case 'Alipay':
+                    redirect('Order/orderPayment/' . $orderkey . "/ALIPAY");
+                    break;
+                case 'WeChat':
+                    redirect('Order/orderPayment/' . $orderkey . "/WECHAT");
+                    break;
+                default:
+                    redirect('Order/orderdetailsguest/' . $orderkey);
+            }
         }
         $this->load->view('Cart/checkoutPayment', $data);
     }
