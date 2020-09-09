@@ -73,7 +73,7 @@
                             <i class="ion-bag fa-stack-1x "></i>
                         </span>  Payment Method
                         <span style="float: right; line-height: 29px;font-size: 12px;font-weight: 300" class="ng-binding">
-                            PayPal
+                            Cash On Delivery
                         </span> 
                     </a>
                     <?php

@@ -58,3 +58,6 @@ $route['privacy-policy'] = 'Shop/privacy_policy';
 
 
 $route['translate_uri_dashes'] = FALSE;
+
+$route['paymentresult'] = 'PaymentGatway/paymentResult';
+

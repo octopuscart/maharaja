@@ -103,7 +103,7 @@ $this->load->view('layout/header');
             <?php
             $this->load->view('Cart/itemblock', array('vtype' => 'items'));
             ?>
-          
+
             <?php
             $this->load->view('Cart/itemblock', array('vtype' => 'shipping'));
             ?>
@@ -161,6 +161,10 @@ $this->load->view('layout/header');
                                                 }
                                                 ?>
 
+                                                <li class="nav-item"><a href="#alipay" class="nav-link " data-toggle="tab" aria-expanded="false">Alipay</a></li>
+                                                <li class="nav-item"><a href="#wechat" class="nav-link " data-toggle="tab" aria-expanded="false">WeChat</a></li>
+
+
 
                                             </ul>
                                         </div>
@@ -179,11 +183,11 @@ $this->load->view('layout/header');
                                                                     <tr>
                                                                         <td colspan="4" class="text_right">
                                                                             <div class="proceed-button pull-left " >
-                                                                                <a href=" <?php echo site_url("Cart".$checkoutmode."/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                <a href=" <?php echo site_url("Cart" . $checkoutmode . "/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
                                                                             </div>
                                                                             <div class="proceed-button pull-right ">
 
-                                                                                <a href=" <?php echo site_url("PayPalPayment".$checkoutmode."/process"); ?>" class="btn-apply-coupon checkout_button_next disabled"  onclick="confirmOrder()">Place Order <i class="fa fa-arrow-right"></i></a>
+                                                                                <a href=" <?php echo site_url("PayPalPayment" . $checkoutmode . "/process"); ?>" class="btn-apply-coupon checkout_button_next disabled"  onclick="confirmOrder()">Place Order <i class="fa fa-arrow-right"></i></a>
                                                                             </div>
                                                                         </td>
                                                                     </tr>
@@ -290,6 +294,71 @@ $this->load->view('layout/header');
                                                     <?php
                                                 }
                                                 ?>
+
+                                                <div class="tab-pane fade " id="alipay">
+
+                                                    <div class='row' style='text-align: center;'>
+                                                        <div class='col-md-12'>
+                                                            <p>
+                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/alipay.jpg" style="height: 100px;">                
+
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="cart-page-top table-responsive">
+                                                        <table class="table table-hover">
+                                                            <tbody id="quantity-holder">
+                                                                <tr>
+                                                                    <td colspan="4" class="text_right">
+                                                                        <div class="proceed-button pull-left " >
+                                                                            <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                        </div>
+                                                                        <div class="proceed-button pull-right ">
+                                                                            <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="Alipay">
+                                                                                Place Order <i class="fa fa-arrow-right"></i>
+                                                                            </button>                                                                   
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="tab-pane fade " id="wechat">
+
+                                                    <div class='row' style='text-align: center;'>
+                                                        <div class='col-md-12'>
+                                                            <p>
+                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" style="height: 100px;">                
+
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="cart-page-top table-responsive">
+                                                        <table class="table table-hover">
+                                                            <tbody id="quantity-holder">
+                                                                <tr>
+                                                                    <td colspan="4" class="text_right">
+                                                                        <div class="proceed-button pull-left " >
+                                                                            <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                        </div>
+                                                                        <div class="proceed-button pull-right ">
+                                                                            <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="WeChat">
+                                                                                Place Order <i class="fa fa-arrow-right"></i>
+                                                                            </button>                                                                   
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>

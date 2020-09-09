@@ -790,20 +790,11 @@ where pa.product_id in ($productatrvalue) group by attribute_value_id";
                 'product_id' => $product_id,
                 'op_date_time' => date('Y-m-d H:i:s'),
             );
-            $custom_dict = $value['custom_dict'];
+            $custom_dict ="";
             $this->db->insert('cart', $product_dict);
             $last_id = $this->db->insert_id();
             $display_index = 1;
-            foreach ($custom_dict as $key => $value) {
-                $custom_array = array(
-                    'style_key' => $key,
-                    'style_value' => $value,
-                    'display_index' => $display_index,
-                    'cart_id' => $last_id,
-                );
-                $this->db->insert('cart_customization', $custom_array);
-                $display_index++;
-            }
+            
         }
     }
 
