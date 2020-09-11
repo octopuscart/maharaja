@@ -240,6 +240,7 @@ class Order extends CI_Controller {
                 'order_id' => $order_id
             );
             $this->db->insert('user_order_status', $productattr);
+             redirect(site_url("Order/orderdetails/$order_key"));
         }
         redirect(site_url("Order/orderdetails/$order_key"));
     }

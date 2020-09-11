@@ -1659,3 +1659,9 @@ h5.theaterblocktext {
     text-align: center;
 }
 }
+
+
+.tt-dataset.tt-dataset-search-products {
+    overflow: auto;
+    max-height: 350px;
+}
