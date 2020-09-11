@@ -339,6 +339,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             $('.typeahead').typeahead(null, {
                 name: 'search-products',
                 display: 'title',
+                limit: 15,
 //                source: substringMatcher($scope.prefetchdata),
                 source: searchProducts,
                 templates: {

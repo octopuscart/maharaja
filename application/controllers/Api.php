@@ -112,7 +112,7 @@ class Api extends REST_Controller {
 //        $query = $this->db->select('title, id, file_name, price')->from('products')->where("title LIKE '%$keyword%' ")->get();
 //        $searchobj = $query->result_array();
 
-        $pquery = "SELECT title, file_name, id, price from products where title like '%$query%' and status = 1";
+        $pquery = "SELECT title, file_name, id, price, credit_limit from products where title like '% $query %' or title like '%$query %' and status = 1 order by credit_limit desc";
         $attr_products = $this->Product_model->query_exe($pquery);
 
 
@@ -120,7 +120,7 @@ class Api extends REST_Controller {
     }
 
     public function prefetchdata_get() {
-        $pquery = "SELECT title, file_name, id, price from products ";
+        $pquery = "SELECT title, file_name, id, price from products where status = 1 order by credit_limit desc limit 0,10";
         $attr_products = $this->Product_model->query_exe($pquery);
         $this->response($attr_products);
     }
@@ -128,7 +128,7 @@ class Api extends REST_Controller {
     public function SearchSuggestApiJUI_get() {
         $getdata = $this->get();
         $keyword = $getdata['term'];
-        $query = $this->db->select('title, id')->from('products')->where("keywords LIKE '%$keyword%'")->get();
+        $query = $this->db->select('title, id')->from('products')->where("keywords LIKE '% $keyword %'")->get();
         $searchobj = $query->result_array();
         $this->response($searchobj);
     }
