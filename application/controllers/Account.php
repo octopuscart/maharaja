@@ -11,6 +11,7 @@ class Account extends CI_Controller {
         $this->load->model('User_model');
         $this->load->model('Product_model');
         $session_user = $this->session->userdata('logged_in');
+        
         if ($session_user) {
             $this->user_id = $session_user['login_id'];
         } else {
@@ -81,6 +82,13 @@ class Account extends CI_Controller {
     //login page
     function login() {
         $data1['msg'] = "";
+        $data1['userloggedin'] = 'no';
+        if($this->user_id){
+            $data1['userloggedin'] = 'yes';
+            $user_details = $this->User_model->user_details($this->user_id);
+            $data1['user_details'] = $user_details;
+        }
+       
 
         $query = $this->db->get('country');
         $countrylist = $query->result();
