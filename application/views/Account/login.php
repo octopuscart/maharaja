@@ -32,8 +32,8 @@ $this->load->view('layout/header');
                         <br/>
                         <small><i class="fa fa-envelope"></i> <?php echo $user_details->email; ?></small>
                     </h2>
-                    <a class="btn  btn btn-danger" href="<?php echo site_url('/');?>"> <i class=" fa fa-arrow-left"></i> SHOP MORE</a>
-                    <a class="btn  btn btn-danger" href="<?php echo site_url('Cart/details');?>">VIEW CART <i class=" fa fa-arrow-right"></i></a>
+                    <a class="btn  btn btn-danger" href="<?php echo site_url('/'); ?>"> <i class=" fa fa-arrow-left"></i> SHOP MORE</a>
+                    <a class="btn  btn btn-danger" href="<?php echo site_url('Cart/details'); ?>">VIEW CART <i class=" fa fa-arrow-right"></i></a>
                 </div>        
 
                 <?php
@@ -70,7 +70,7 @@ $this->load->view('layout/header');
                     <?php
                 }
                 ?>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
                     <div class="login-registration-field">
                         <h2 class="cart-area-title">Login</h2>
                         <form method="post" action="#">
@@ -84,7 +84,7 @@ $this->load->view('layout/header');
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12">
                     <div class="login-registration-field">
                         <h2 class="cart-area-title">Register</h2>
                         <form action="#" method="post">
@@ -98,8 +98,16 @@ $this->load->view('layout/header');
                                     <input type="text" name="first_name" placeholder="First Name *" required="">
                                 </div>
                             </div>
-                            <label>Email address *</label>
-                            <input type="email" name="email" placeholder="Email *" required="">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email address *</label>
+                                    <input type="email" name="email" placeholder="Email *" required="">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Contact No. *</label>
+                                    <input type="tel" name="contact_no" placeholder="Contact No. *" required="">
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col-md-6">
