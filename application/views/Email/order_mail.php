@@ -71,20 +71,25 @@
           padding: 0;
           background: rgb(225, 225, 225);
           font-family: sans-serif;">
-        <div class="" style="padding:50px 0px">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff;padding: 0 20px">
+        <div class="" style="padding:50px 0px;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background:#d92229 ;color:#ffeb3b;padding: 0 20px">
                 <tr>
                     <td >
                         <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
                                      height: 50px;
-                                     width: auto;"/><br/>
+                                     width: auto;    margin: 10px;
+                                     height: 50px;
+                                     width: auto;
+                                     padding: 5px 10px;
+                                     background: #ffffff;
+                                     border-radius: 25px;"/><br/>
                             <h4 style=""> Order No.: <?php echo $order_data->order_no; ?></h4>
                         </center>
                     </td>
 
                 </tr>
             </table>
-            <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff">
+            <table class="detailstable" align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff;padding-top:10px">
                 <tr>
                     <td style="font-size: 12px;width: 50%;padding: 2px 20px;" >
                         <b>Shipping Address</b><hr/>
@@ -180,7 +185,7 @@
                         </td>
 
                         <td style="width: 50px">
-                            <center>   <img src=" <?php echo $product->file_name; ?>" style="height: 50px;"></img>
+                            <center>   <img src="<?php echo base_url(); ?>assets/images/defaultProduct.png" style="height: 50px;background: url(<?php echo $product->file_name; ?>);background-size: cover;    background-position: center;"></img>
                         </td>
 
                         <td style="width: 200px;">
@@ -218,39 +223,44 @@
                     </td>
 
                 </tr>
-                <tr>
+                <tr style="font-weight: bold;">
                     <td colspan="2" style="text-align: right">Sub Total</td>
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->sub_total_price, 2, '.', ''); ?> </td>
                 </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right">Shipping Amount</td>
+                <tr style="font-weight: bold;">
+                    <td colspan="2" style="text-align: right;">Shipping Amount</td>
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->shipping_price, 2, '.', ''); ?> </td>
                 </tr>
-                <tr>
+                <tr style="font-weight: bold;">
                     <td colspan="2" style="text-align: right">Coupon Discount</td>
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->credit_price, 2, '.', ''); ?> </td>
                 </tr>
-                <tr>
+                <tr style="font-weight: bold;">
                     <td colspan="2" style="text-align: right">Toal Amount</td>
                     <td style="text-align: right;width: 60px"><?php echo globle_currency . " " . number_format($order_data->total_price, 2, '.', ''); ?> </td>
                 </tr>
 
 
                 <tr>
-                    <td colspan="6" style="font-size: 12px;">
+                    <td colspan="6" style="font-size: 12px;background-color:#ffeb3b">
 
 
 
-                       <?php echo EMAIL_FOOTER;?>
+                        <?php echo EMAIL_FOOTER; ?>
 
 
-
+                        <br/>
+                        <div class="" style="width: 100%;float:left;background: #fff;padding: 5px 0px;;text-align: center;background: #d92229;">
+                            <a href="<?php echo ADMINURL . 'order/order_pdf_order_key/' . $order_data->order_key; ?>"  target="_blank" style="color:white!important;">
+                                Click Here To Download Invoice
+                            </a>
+                        </div>
                         <br/>
                         <span style="    text-align: center;
                               width: 100%;
                               float: left;
                               margin-top: 24px;
-                              background-color: white;
+
                               color: black;
                               font-size: 10px;"> (This is computer generated receipt and does not require physical signature.)</span>
                     </td>
