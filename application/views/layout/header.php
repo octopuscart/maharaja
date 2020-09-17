@@ -88,15 +88,14 @@
                 s.parentNode.insertBefore(t, s)
             }(window, document, 'script',
                     'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '2388809281421271');
+            fbq('init', '2742995455801310');
             fbq('track', 'PageView');
         </script>
-        <noscript>
-    <img height="1" width="1" 
-         src="https://www.facebook.com/tr?id=2388809281421271&ev=PageView
-         &noscript=1"/>
-    </noscript>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=2742995455801310&ev=PageView&noscript=1"
+                   /></noscript>
     <!-- End Facebook Pixel Code -->
+
 
 </head>
 
@@ -208,14 +207,14 @@ foreach ($parentmenu as $key => $value) {
                                                 <li><a href="<?php echo site_url('Account/profile'); ?>"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
                                                 <li><a href="<?php echo site_url('Account/logout'); ?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 
-                                                <?php
-                                            } else {
-                                                ?>
+    <?php
+} else {
+    ?>
                                                 <li><a href="<?php echo site_url('Account/login'); ?>"><i class="fa fa-lock" aria-hidden="true"></i> Account</a></li>
 
-                                                <?php
-                                            }
-                                            ?>
+    <?php
+}
+?>
 
 
 
@@ -256,9 +255,9 @@ foreach ($parentmenu as $key => $value) {
                                                     <font>My Cart</font>
                                                     <i class="fa fa-shopping-cart"></i><span>{{globleCartData.total_quantity}}</span>
                                                 </a>
-                                                <?php
-                                                $this->load->view('layout/topcart');
-                                                ?>
+<?php
+$this->load->view('layout/topcart');
+?>
                                             </div>
                                         </li>
 
@@ -278,34 +277,34 @@ foreach ($parentmenu as $key => $value) {
                                 <div class="category-menu-area" id="category-menu-area">
                                     <h2 class="category-menu-title"><a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
                                     <ul class="category-menu-area-inner">
-                                        <?php
-                                        foreach ($menucontainer as $key => $value) {
-                                            $children = $value['children'];
-                                            ?>
+                                                <?php
+                                                foreach ($menucontainer as $key => $value) {
+                                                    $children = $value['children'];
+                                                    ?>
                                             <li><a href="<?php echo site_url('Product/productList/1/' . $value['id']); ?>">
-                                                    <?php echo $value['category_name']; ?>
-                                                    <?php if ($children) { ?>
+                                                <?php echo $value['category_name']; ?>
+                                                <?php if ($children) { ?>
                                                         <span><i class="flaticon-next"></i></span>
                                                     </a>
                                                     <ul class="dropdown-menu">
-                                                        <?php
-                                                        foreach ($children as $ckey => $cvalue) {
-                                                            ?>
-                                                            <li><a href="<?php echo site_url('Product/productList/1/' . $cvalue['id']); ?>"><?php echo $cvalue['category_name']; ?></a></li>
-                                                            <?php
-                                                        }
-                                                        ?>
-                                                    </ul>
                                                     <?php
-                                                } else {
-                                                    ?>
-                                                    </a><?php
+                                                    foreach ($children as $ckey => $cvalue) {
+                                                        ?>
+                                                            <li><a href="<?php echo site_url('Product/productList/1/' . $cvalue['id']); ?>"><?php echo $cvalue['category_name']; ?></a></li>
+                                                    <?php
                                                 }
                                                 ?>
+                                                    </ul>
+        <?php
+    } else {
+        ?>
+                                                    </a><?php
+    }
+    ?>
                                             </li>
-                                            <?php
-                                        }
-                                        ?>
+    <?php
+}
+?>
                                     </ul>
                                 </div>
                             </div>
@@ -342,9 +341,9 @@ foreach ($parentmenu as $key => $value) {
 
                                                         <i class="fa fa-shopping-cart"></i><span>{{globleCartData.total_quantity}}</span>
                                                     </a>
-                                                    <?php
-                                                    $this->load->view('layout/topcart');
-                                                    ?>
+<?php
+$this->load->view('layout/topcart');
+?>
                                                 </div>
                                             </li>
 
@@ -362,34 +361,34 @@ foreach ($parentmenu as $key => $value) {
                                     <div class="mobile-menu">
                                         <nav id="dropdown">
                                             <ul>
-                                                <?php
-                                                foreach ($menucontainer as $key => $value) {
-                                                    $children = $value['children'];
-                                                    ?>
+                                                        <?php
+                                                        foreach ($menucontainer as $key => $value) {
+                                                            $children = $value['children'];
+                                                            ?>
                                                     <li><a href="<?php echo site_url('Product/productList/1/' . $value['id']); ?>">
-                                                            <?php echo $value['category_name']; ?>
-                                                            <?php if ($children) { ?>
+                                                        <?php echo $value['category_name']; ?>
+                                                        <?php if ($children) { ?>
 
                                                             </a>
                                                             <ul class="dropdown-menu">
-                                                                <?php
-                                                                foreach ($children as $ckey => $cvalue) {
-                                                                    ?>
-                                                                    <li><a href="<?php echo site_url('Product/productList/1/' . $cvalue['id']); ?>"><?php echo $cvalue['category_name']; ?></a></li>
-                                                                    <?php
-                                                                }
-                                                                ?>
-                                                            </ul>
                                                             <?php
-                                                        } else {
-                                                            ?>
-                                                            </a><?php
+                                                            foreach ($children as $ckey => $cvalue) {
+                                                                ?>
+                                                                    <li><a href="<?php echo site_url('Product/productList/1/' . $cvalue['id']); ?>"><?php echo $cvalue['category_name']; ?></a></li>
+                                                            <?php
                                                         }
                                                         ?>
+                                                            </ul>
+        <?php
+    } else {
+        ?>
+                                                            </a><?php
+    }
+    ?>
                                                     </li>
-                                                    <?php
-                                                }
-                                                ?>
+    <?php
+}
+?>
                                             </ul>
                                         </nav>
                                     </div>
@@ -440,7 +439,7 @@ foreach ($parentmenu as $key => $value) {
 
             $(function () {
                 $('form').submit(function () {
-                    $(this).find('button[type=submit]').each(function(){
+                    $(this).find('button[type=submit]').each(function () {
                         $(this).hide();
                     });
                 });
