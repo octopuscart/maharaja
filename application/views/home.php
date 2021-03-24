@@ -16,6 +16,14 @@ $this->load->view('layout/header');
     <div class="main-slider2">
         <div class="bend niceties preview-1">
             <div id="ensign-nivoslider-3" class="slides">
+                <img src="<?php echo base_url(); ?>assets/sliders/24032021/main_slider2.jpg" alt="" title="#slider-direction-6" />
+                <img src="<?php echo base_url(); ?>assets/sliders/24032021/indian_grocery.jpg" alt="" title="#slider-direction-7" />
+                <img src="<?php echo base_url(); ?>assets/sliders/24032021/spice.jpg" alt="" title="#slider-direction-8" />
+                <img src="<?php echo base_url(); ?>assets/sliders/24032021/vegetables.jpg" alt="" title="#slider-direction-9" />
+                <img src="<?php echo base_url(); ?>assets/sliders/24032021/dairy.jpg" alt="" title="#slider-direction-10" />
+                <img src="<?php echo base_url(); ?>assets/sliders/24032021/payment.jpg" alt="" title="#slider-direction-11" />
+                <img src="<?php echo base_url(); ?>assets/sliders/24032021/cinema.jpg" alt="" title="#slider-direction-12" />
+
                 <img src="<?php echo base_url(); ?>assets/sliders/home-banner-2.jpg" alt="" title="#slider-direction-1" />
                 <img src="<?php echo base_url(); ?>assets/sliders/home-banner-4.jpg" alt="" title="#slider-direction-4" />
                 <img src="<?php echo base_url(); ?>assets/sliders/home-banner-5.jpg" alt="" title="#slider-direction-5" />
@@ -30,7 +38,7 @@ $this->load->view('layout/header');
                         <h2 class="title1">SHOP ORGANIC PRODUCT
                             <br/> Fruits,Oils, Ghee & Much More
                         </h2>
-                        <a href="<?php echo site_url('Product/productList/1/19');?>" class="btn-shop-now-fill-slider">Shop Now</a>
+                        <a href="<?php echo site_url('Product/productList/1/19'); ?>" class="btn-shop-now-fill-slider">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -74,7 +82,7 @@ $this->load->view('layout/header');
                     <div class="title-container s-tb-c hideonmoile">
                         <h2 class="title1" style="font-size: 22px"> Top quality pulses and food grains, dairy products
                             <br/><span style="font-size: 20px">Fresh Fruits and Vegetables</span>                         </h2>
-                        <a href="<?php echo site_url('Product/productList/1/19');?>" class="btn-shop-now-fill-slider">Shop Now</a>
+                        <a href="<?php echo site_url('Product/productList/1/19'); ?>" class="btn-shop-now-fill-slider">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -163,13 +171,13 @@ $this->load->view('layout/header');
 
     <div class="container block52">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="    margin-top: 24px;">
-            <div class="banner-top-left col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('contact');?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/become-vendor-1.jpg" alt=""></a></div>
-            <div class="banner-top-center col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('privacy-policy');?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/hk-delivery-1.jpg" alt=""></a></div>
+            <div class="banner-top-left col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('contact'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/become-vendor-1.jpg" alt=""></a></div>
+            <div class="banner-top-center col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('privacy-policy'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/hk-delivery-1.jpg" alt=""></a></div>
             <div class="banner-top-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajatickets.com/" target="_blank"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/favourite-banner-1.jpg" alt=""></a></div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style="    margin-top: 24px;">
             <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/boutique-collection-1.jpg" alt=""></div>
-            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('/');?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/cares-shares-1.jpg" alt=""></a></div>
+            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('/'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/cares-shares-1.jpg" alt=""></a></div>
         </div>
     </div>
 
@@ -208,8 +216,8 @@ $this->load->view('layout/header');
 
     <div class="container">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="<?php echo site_url('/');?>"><img src="<?php echo base_url(); ?>assets/images/ext/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
-            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('/');?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
+            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="<?php echo site_url('/'); ?>"><img src="<?php echo base_url(); ?>assets/images/ext/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
+            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('/'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
         </div>
     </div>
 
