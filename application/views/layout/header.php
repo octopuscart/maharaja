@@ -124,6 +124,10 @@ foreach ($parentmenu as $key => $value) {
 
         margin-left: -90px;
     }
+    
+    .main-menu-area .smalltext{
+        font-size: 9px;
+    }
 </style>
 
 <!-- Modal Dialog Box End Here-->
@@ -314,7 +318,9 @@ $this->load->view('layout/topcart');
                                         <ul>
                                             <li class="active"><a href="#">Offers</a></li>
                                             <li><a href="http://maharajatickets.com/" target="_blank">Movie Tickets</a></li>
-                                            <li><a href="https://www.woodlandshk.com/"  target="_blank">Woodlands Indian Vegetarian Restaurant</a></li>
+                                            <li><a href="https://www.woodlandshk.com/"  target="_blank">Woodlands <br/><span class="smalltext">Indian Vegetarian Restaurant</span></a></li>
+                                            <li><a href="https://www.helloindia.com.hk/"  target="_blank">Hello India <br/> <span class="smalltext">World Of Delicious Indian Cuisine</span>
+                                                </a></li>
 
                                         </ul>
                                     </nav>
