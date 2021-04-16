@@ -21,7 +21,7 @@ $this->load->view('layout/header');
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/spice.jpg" alt="" title="#slider-direction-8" />
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/vegetables.jpg" alt="" title="#slider-direction-9" />
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/dairy.jpg" alt="" title="#slider-direction-10" />
-                <img src="<?php echo base_url(); ?>assets/sliders/24032021/payment.jpg" alt="" title="#slider-direction-11" />
+                <img src="<?php echo base_url(); ?>assets/sliders/24032021/payment2.jpg" alt="" title="#slider-direction-11" />
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/cinema.jpg" alt="" title="#slider-direction-12" />
 
                 <img src="<?php echo base_url(); ?>assets/sliders/home-banner-2.jpg" alt="" title="#slider-direction-1" />
