@@ -196,7 +196,7 @@ class PaymePayment extends CI_Controller {
 
         $this->access_token = $this->session->userdata('access_token');
         $this->token_type = $this->session->userdata('token_type');
-        date_default_timezone_set("Asia/Hong_Kong");
+//        date_default_timezone_set("Asia/Hong_Kong");
         $request_date_time = gmdate("Y-m-d\TH:i:s\Z");
 
         $this->session->set_userdata('request_date_time', $request_date_time);
