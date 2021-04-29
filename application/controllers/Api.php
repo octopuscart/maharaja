@@ -384,13 +384,13 @@ class Api extends REST_Controller {
         $this->response("hell");
     }
 
-    function paymewebhook($orderkey) {
+    function paymewebhook_post($orderkey) {
         header("HTTP/1.1 200 OK");
         $postdata = $this->post();
         $notifydata = array(
             "order_id" => $orderkey,
             "payment_data" => json_encode($postdata),
-            "datetime" => date('Y-m-d H:i:s')
+            "datetime" => date('Y-m-d H:i:s')." API"
         );
         $this->db->insert('payme_status', $notifydata);
         $this->response(array("status"=>200));
