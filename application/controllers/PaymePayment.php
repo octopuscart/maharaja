@@ -12,10 +12,10 @@ class PaymePayment extends CI_Controller {
         $this->checklogin = $this->session->userdata('logged_in');
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
 
-        $cid = "a989d65f-52eb-4fca-abeb-971c883d50ea";
-        $csecret = "7L8_VpY21_JE6fR4Bs_lw0tVl.~kNdC-m1";
-        $skeyid = "bcea0f7f-3840-4466-a018-7e846d22673b";
-        $skey = "ZjVta0NNSkU4cGFoSFVpWm5KYU9iaWk4YjZSNzdlanQ0dVJpOEo5T01OND0=";
+        $cid = "5305b308-0c0f-410e-9966-e81c9aa60457";
+        $csecret = "q4FfLao1D-px2G1fsB53d8jsv-SJx5q_-7";
+        $skeyid = "4d1fe932-7758-4e97-a248-b800d05d8b5f";
+        $skey = "cFNRL0k3ZjkrUC9PYmkxblZ0RGlpMXVIakdQYXp0RTRTUWZMUG50RFRZOD0=";
         $this->skey = $skey;
         $this->skeyid = $skeyid;
         $this->signing_key_base64 = $skey;
@@ -29,6 +29,7 @@ class PaymePayment extends CI_Controller {
         $this->api_version = "0.12";
         $this->payment_request_url = "/payments/paymentrequests";
         $this->auth_request_url = "/oauth2/token";
+        $this->accesstokenbody = "client_id=$cid&client_secret=$csecret";
         $this->paymentlist = array(
             "1.80" => array("amt" => "1.80", "status" => "Normal expiry", "title" => "Package 1",),
             "1.81" => array("amt" => "1.81", "status" => "Payment success", "title" => "Package 2"),
@@ -127,7 +128,7 @@ class PaymePayment extends CI_Controller {
         $headers[] = "Authorization:noauth";
         $headers[] = "Api-Version: $this->api_version";
         $url = $this->protocol . $this->endpoint . $this->auth_request_url;
-        $curldata = $this->useCurl($url, $headers, "client_id=a989d65f-52eb-4fca-abeb-971c883d50ea&client_secret=7L8_VpY21_JE6fR4Bs_lw0tVl.~kNdC-m1", true);
+        $curldata = $this->useCurl($url, $headers, $this->accesstokenbody, true);
         $access_token = $curldata['accessToken'];
         $token_type = $curldata['tokenType'];
         $this->session->set_userdata('access_token', $access_token);
