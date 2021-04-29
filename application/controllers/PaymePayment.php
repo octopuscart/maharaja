@@ -11,7 +11,7 @@ class PaymePayment extends CI_Controller {
         $this->load->model('User_model');
         $this->checklogin = $this->session->userdata('logged_in');
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
-        date_default_timezone_set("Asia/Hong_Kong");
+//        date_default_timezone_set("Asia/Hong_Kong");
         $cid = "5305b308-0c0f-410e-9966-e81c9aa60457";
         $csecret = "q4FfLao1D-px2G1fsB53d8jsv-SJx5q_-7";
         $skeyid = "4d1fe932-7758-4e97-a248-b800d05d8b5f";
@@ -123,7 +123,7 @@ class PaymePayment extends CI_Controller {
     }
 
     function initPaymeLogin($orderkey) {
-        date_default_timezone_set("Asia/Hong_Kong");
+//        date_default_timezone_set("Asia/Hong_Kong");
         $headers[] = "Content-Type: application/x-www-form-urlencoded";
         $headers[] = "Accept: application/json";
         $headers[] = "Authorization:noauth";
@@ -197,7 +197,7 @@ class PaymePayment extends CI_Controller {
 
         $this->access_token = $this->session->userdata('access_token');
         $this->token_type = $this->session->userdata('token_type');
-        date_default_timezone_set("Asia/Hong_Kong");
+//        date_default_timezone_set("Asia/Hong_Kong");
         $request_date_time = gmdate("Y-m-d\TH:i:s\Z");
 
         $this->session->set_userdata('request_date_time', $request_date_time);
