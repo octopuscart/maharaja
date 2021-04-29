@@ -148,9 +148,9 @@ class Api extends REST_Controller {
                 $psearch = " and title like '%$searchdata%' ";
             }
         }
-        
-        
-        
+
+
+
         if (isset($attrdatak["minprice"])) {
             $priecemn = $attrdatak["minprice"];
             $priecemx = $attrdatak["maxprice"];
@@ -382,6 +382,18 @@ class Api extends REST_Controller {
     function orderMailVender_get($order_id) {
         // $this->Product_model->order_mail_to_vendor($order_id);
         $this->response("hell");
+    }
+
+    function paymewebhook($orderkey) {
+        header("HTTP/1.1 200 OK");
+        $postdata = $this->post();
+        $notifydata = array(
+            "order_id" => $orderkey,
+            "payment_data" => json_encode($postdata),
+            "datetime" => date('Y-m-d H:i:s')
+        );
+        $this->db->insert('payme_status', $notifydata);
+        $this->response(array("status"=>200));
     }
 
 }
