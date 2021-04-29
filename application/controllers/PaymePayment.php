@@ -196,7 +196,7 @@ class PaymePayment extends CI_Controller {
 
         $this->access_token = $this->session->userdata('access_token');
         $this->token_type = $this->session->userdata('token_type');
-//        date_default_timezone_set("Asia/Hong_Kong");
+        date_default_timezone_set("Asia/Hong_Kong");
         $request_date_time = gmdate("Y-m-d\TH:i:s\Z");
 
         $this->session->set_userdata('request_date_time', $request_date_time);
@@ -233,6 +233,11 @@ class PaymePayment extends CI_Controller {
         $orderno = $order_details['order_data']->order_no;
         $data["order_amount"] = $total_price;
         $data["cart_data"] = $order_details['cart_data'];
+
+        echo $request_date_time = gmdate("Y-m-d\TH:i:s\Z");
+        echo "--";
+        date_default_timezone_set("Asia/Hong_Kong");
+        echo $request_date_time = gmdate("Y-m-d\TH:i:s\Z");
 
 
         $url = $this->payment_request_url;
