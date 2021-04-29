@@ -163,7 +163,15 @@ $this->load->view('layout/header');
 
                                                 <li class="nav-item"><a href="#alipay" class="nav-link " data-toggle="tab" aria-expanded="false">Alipay</a></li>
                                                 <li class="nav-item"><a href="#wechat" class="nav-link " data-toggle="tab" aria-expanded="false">WeChat</a></li>
-
+                                                <?php
+                                                if (isset($_GET["mode"])) {
+                                                    if ($_GET["mode"] == 'test') {
+                                                        ?>
+                                                        <li class="nav-item"><a href="#payme" class="nav-link " data-toggle="tab" aria-expanded="false">PayMe</a></li>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
 
 
                                             </ul>
@@ -358,7 +366,49 @@ $this->load->view('layout/header');
 
                                                     </div>
                                                 </div>
+                                                <?php
+                                                if (isset($_GET["mode"])) {
+                                                    if ($_GET["mode"] == 'test') {
+                                                        ?>
+                                                        <div class="tab-pane fade " id="payme">
 
+                                                            <div class='row' style='text-align: center;'>
+                                                                <div class='col-md-12'>
+                                                                    <p>
+                                                                        <img src="<?php echo base_url(); ?>assets/paymentstatus/payme_logo_color_horizontal_standalone_rgb.png" style="height: 100px;">                
+
+                                                                    </p>
+                                                                    <p>
+                                                                        You have selected PayMe as your payment method use your PayMe app to complete payment.                                    </div>
+
+                                                                </p>
+                                                            </div>
+
+
+                                                            <div class="cart-page-top table-responsive">
+                                                                <table class="table table-hover">
+                                                                    <tbody id="quantity-holder">
+                                                                        <tr>
+                                                                            <td colspan="4" class="text_right">
+                                                                                <div class="proceed-button pull-left " >
+                                                                                    <a href=" <?php echo site_url("Cart/checkoutShipping"); ?>" class="btn-apply-coupon checkout_button_pre disabled" ><i class="fa fa-arrow-left"></i> View Shipping Address</a>
+                                                                                </div>
+                                                                                <div class="proceed-button pull-right ">
+                                                                                    <button type="submit" name="place_order" class="btn-apply-coupon checkout_button_next disabled"  value="PayMe">
+                                                                                        Place Order <i class="fa fa-arrow-right"></i>
+                                                                                    </button>                                                                   
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+
+                                                            </div>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
