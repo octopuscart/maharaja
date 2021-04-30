@@ -27,6 +27,7 @@ class PaymePayment extends CI_Controller {
         $this->client_id = $cid;
         $this->client_secret = $csecret;
         $this->api_version = "0.12";
+          $this->testamount = 8.45;
         $this->payment_request_url = "/payments/paymentrequests";
         $this->auth_request_url = "/oauth2/token";
         $this->accesstokenbody = "client_id=$cid&client_secret=$csecret";
@@ -123,7 +124,6 @@ class PaymePayment extends CI_Controller {
     }
 
     function initPaymeLogin($orderkey) {
-//        date_default_timezone_set("Asia/Hong_Kong");
         $headers[] = "Content-Type: application/x-www-form-urlencoded";
         $headers[] = "Accept: application/json";
         $headers[] = "Authorization:noauth";
@@ -197,7 +197,7 @@ class PaymePayment extends CI_Controller {
 
         $this->access_token = $this->session->userdata('access_token');
         $this->token_type = $this->session->userdata('token_type');
-//        date_default_timezone_set("Asia/Hong_Kong");
+        date_default_timezone_set("Asia/Hong_Kong");
         $request_date_time = gmdate("Y-m-d\TH:i:s\Z");
 
         $this->session->set_userdata('request_date_time', $request_date_time);
@@ -223,14 +223,14 @@ class PaymePayment extends CI_Controller {
         return $headers;
     }
 
-    public function payMeprocess($order_key) {
-        $successurl = "https://maharajamart.com/PaymePayment/success";
-        $failureurl = "https://maharajamart.com/PaymePayment/failure";
-        $notificatonurl = "https://maharajamart.com/Api/paymewebhook/$order_key";
+    public function payMeprocess($order_key, $is_mobile = "") {
+        $successurl = site_url("PaymePayment/success");
+        $failureurl = site_url("PaymePayment/failure");
+        $notificatonurl = site_url("PaymePayment/notificaton/$order_key");
 //        $notificatonurl = site_url("Api/paymewebhook/$order_key");
         $post = true;
         $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
-        $total_price = (1) + 0.81;
+        $total_price = $this->testamount;
         $orderno = $order_details['order_data']->order_no;
         $data["order_amount"] = $total_price;
         $data["cart_data"] = $order_details['cart_data'];
@@ -257,8 +257,11 @@ class PaymePayment extends CI_Controller {
         $data["paymentdata"] = $curldata;
         $data["order_details"] = $order_details;
 
-
-        $this->load->view('payme/payrequest', $data);
+        if ($is_mobile) {
+            $this->load->view('payme/payrequest_mobile', $data);
+        } else {
+            $this->load->view('payme/payrequest', $data);
+        }
     }
 
     public function query($payid) {
@@ -269,6 +272,12 @@ class PaymePayment extends CI_Controller {
         $url = $this->protocol . $this->endpoint . $url;
         $curldata = $this->useCurl($url, $headers, $body, $post);
         return ($curldata);
+    }
+
+    function checkstatus() {
+        echo $paymentRequestId = $this->session->userdata('paymentRequestId');
+        $curldata = $this->query($paymentRequestId);
+        print_r($curldata);
     }
 
     public function cancel($payid) {
@@ -291,22 +300,55 @@ class PaymePayment extends CI_Controller {
         $this->load->view('payme/paycancel', $data);
     }
 
-    function success() {
+    function success($order_key) {
+        $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
+        $total_price = (1) + $this->testamount;
+        $orderno = $order_details['order_data']->order_no;
+        $data["order_amount"] = $total_price;
+        $data["cart_data"] = $order_details['cart_data'];
         $paymentRequestId = $this->token_type = $this->session->userdata('paymentRequestId');
         $curldata = $this->query($paymentRequestId);
         $data["paymentdata"] = $curldata;
         $data["paymentlist"] = $this->paymentlist;
         $data["paymentRequestId"] = $paymentRequestId;
+        $data["order_details"] = $order_details;
         $this->load->view('payme/success', $data);
     }
 
-    function failure() {
+    function failure($order_key) {
         $paymentRequestId = $this->token_type = $this->session->userdata('paymentRequestId');
         $curldata = $this->query($paymentRequestId);
         $data["paymentdata"] = $curldata;
         $data["paymentlist"] = $this->paymentlist;
         $data["paymentRequestId"] = $paymentRequestId;
+        $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
+        $total_price = (1) + $this->testamount;
+        $orderno = $order_details['order_data']->order_no;
+        $data["order_amount"] = $total_price;
+        $data["cart_data"] = $order_details['cart_data'];
+        $data["paymentdata"] = $curldata;
+        $data["paymentlist"] = $this->paymentlist;
+        $data["paymentRequestId"] = $paymentRequestId;
+        $data["order_details"] = $order_details;
         $this->load->view('payme/failed', $data);
+    }
+
+    function expiry($order_key) {
+        $paymentRequestId = $this->token_type = $this->session->userdata('paymentRequestId');
+        $curldata = $this->query($paymentRequestId);
+        $data["paymentdata"] = $curldata;
+        $data["paymentlist"] = $this->paymentlist;
+        $data["paymentRequestId"] = $paymentRequestId;
+        $order_details = $this->Product_model->getOrderDetails($order_key, 'key');
+        $total_price = (1) + $this->testamount;
+        $orderno = $order_details['order_data']->order_no;
+        $data["order_amount"] = $total_price;
+        $data["cart_data"] = $order_details['cart_data'];
+        $data["paymentdata"] = $curldata;
+        $data["paymentlist"] = $this->paymentlist;
+        $data["paymentRequestId"] = $paymentRequestId;
+        $data["order_details"] = $order_details;
+        $this->load->view('payme/expiry', $data);
     }
 
     function notificaton($orderkey) {
@@ -326,5 +368,8 @@ class PaymePayment extends CI_Controller {
         print($postdata);
         print($getdata);
     }
-
+    
+    function gettoken(){
+     echo    $this->access_token = $this->session->userdata('access_token');
+    }
 }
