@@ -224,7 +224,7 @@ $image2 = "";
                                             <span><span  style="font-size: 11px;" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
 
                                         </h3>
-                                        <div class="productbuttonscontainer">
+                                        <div class="productbuttonscontainer" ng-if="product.stock_status == 'In Stock'">
 
                                             <button ng-click="addToCart(product.product_id, 1)" class="productbutton" style="    background: #d92229;
                                                     color: white;
@@ -232,6 +232,9 @@ $image2 = "";
                                             <button ng-click="addToBuy(product.product_id, 1)" type="button" class="productbutton">Buy Now</button>
 
                                         </div>  
+                                        {{product.stock_status=='Out Of Stock'?"Out Of Stock":""}}
+
+
                                     </div>
 
 
@@ -251,14 +254,15 @@ $image2 = "";
                                         </h3>
 
 
-                                        <div class="productbuttonscontainer" >
-                                            {{product.varients[product.selectedobject].stock_status}}
+                                        <div class="productbuttonscontainer" ng-if="product.varients[product.selectedobject].stock_status == 'In Stock'">
+
                                             <button ng-click="addToCart(product.varients[product.selectedobject].id, 1)" class="productbutton" style="    background: #d92229;
                                                     color: white;
                                                     border-color: #d92229;">Add To Cart</button>
                                             <button ng-click="addToBuy(product.varients[product.selectedobject].id, 1)" type="button" class="productbutton">Buy Now</button>
 
                                         </div>  
+                                        {{product.varients[product.selectedobject].stock_status=='Out Of Stock'?"Out Of Stock":""}}
                                     </div>
 
                                 </div>

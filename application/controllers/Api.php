@@ -166,7 +166,7 @@ class Api extends REST_Controller {
         $categoriesString = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
         $categoriesString = ltrim($categoriesString, ", ");
 
-        $product_query = "select pt.id as product_id, pt.*
+        $product_query = "select pt.id as product_id, pt.stock_status,  pt.*
             from products as pt where pt.category_id in ($categoriesString) and variant_product_of = '' $pricequery and status = 1  order by id ";
         $product_result = $this->Product_model->query_exe($product_query);
 
