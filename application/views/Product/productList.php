@@ -116,23 +116,23 @@ $image2 = "";
 
                         </ul>
                     </div>
-<!--                    <h2 class="title-sidebar">BEST PRODUCTS</h2>
-                    <div class="best-products sidebar-section-margin">
-                        <div class="media" ng-repeat="prd in offerProducts">
-                            <a href="#" class="pull-left">
-                                <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{prd.file_name}});      background-size: cover;
-                                     background-position: center;height:60px;width:60px;">
-
-                                </div >                           
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="#" style="font-size: 13px;">{{prd.title}}</a></h3>
-                                <p>{{prd.price|currency:"<?php echo globle_currency; ?> "}}</p>
-                            </div>
-                        </div>
-                    </div>-->
-                    <h2 class="title-sidebar">FILTER BY PRICE</h2>
+                    <!--                    <h2 class="title-sidebar">BEST PRODUCTS</h2>
+                                        <div class="best-products sidebar-section-margin">
+                                            <div class="media" ng-repeat="prd in offerProducts">
+                                                <a href="#" class="pull-left">
+                                                    <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{prd.file_name}});      background-size: cover;
+                                                         background-position: center;height:60px;width:60px;">
                     
+                                                    </div >                           
+                                                </a>
+                                                <div class="media-body">
+                                                    <h3 class="media-heading"><a href="#" style="font-size: 13px;">{{prd.title}}</a></h3>
+                                                    <p>{{prd.price|currency:"<?php echo globle_currency; ?> "}}</p>
+                                                </div>
+                                            </div>
+                                        </div>-->
+                    <h2 class="title-sidebar">FILTER BY PRICE</h2>
+
                     <p>
                         Price Range: {{productResults.price.minprice|currency}} to {{productResults.price.maxprice|currency}}
                     </p>
@@ -148,7 +148,6 @@ $image2 = "";
                     <div class="product-tags sidebar-section-margin">
                         <ul>
                             <?php
-                           
                             foreach ($producttag as $key => $value) {
                                 ?>
                                 <li><a href="<?php echo site_url('Product/productList/1/' . $value['id']) ?>" style="text-transform: uppercase"><?php echo $value['category_name']; ?></a></li>
@@ -199,23 +198,23 @@ $image2 = "";
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 animated productlistborder {{globleCartData.products[product.id] ? 'activeproduct': '' }} {{(product.hasvarient && globleCartData.products[product.varients[product.selectedobject].id]) ? 'activeproduct': '' }}"  ng-repeat="(k, product) in productResults.products" >
                                 <div class="product-box1" >
                                     <div class="addedtocard"><i class="fa fa-cart-plus"></i></div>
-                                    
+
 
                                     <div class="product-img-holder" >
-<img src="<?php echo base_url(); ?>assets/images/defaultProduct.png" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
-                                         background-position: center;" />
+                                        <img src="<?php echo base_url(); ?>assets/images/defaultProduct.png" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
+                                             background-position: center;" />
                                     </div>
 
                                     <div class="product-content-holder" ng-if="product.hasvarient == 0">
                                         <h3>
                                             <div>{{product.title}}  <br>
-                                               <small>SKU#: {{product.sku}}</small>
+                                                <small>SKU#: {{product.sku}}</small>
 
-                                          
+
 <!--                                            <select class="productsveriantselection" >
 
-                                                <option  selected  >{{product.description}} - {{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</option>
-                                            </select>-->
+      <option  selected  >{{product.description}} - {{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</option>
+  </select>-->
                                             </div>
 
 
@@ -253,7 +252,7 @@ $image2 = "";
 
 
                                         <div class="productbuttonscontainer" >
-
+                                            {{product.varients[product.selectedobject].stock_status}}
                                             <button ng-click="addToCart(product.varients[product.selectedobject].id, 1)" class="productbutton" style="    background: #d92229;
                                                     color: white;
                                                     border-color: #d92229;">Add To Cart</button>
