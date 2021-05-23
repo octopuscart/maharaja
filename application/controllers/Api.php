@@ -45,8 +45,8 @@ class Api extends REST_Controller {
             $session_cart = $this->Product_model->cartData();
         }
 
-        $session_cart['shipping_price'] = 30;
-        if ($session_cart['total_price'] > 299) {
+        $session_cart['shipping_price'] = SHPPING_PRICE;
+        if ($session_cart['total_price'] > SHPPING_MINVALUE) {
             $session_cart['shipping_price'] = 0;
         }
         if ($this->checklogin) {
@@ -64,7 +64,17 @@ class Api extends REST_Controller {
                 $session_cart['shipping_price'] = 0;
             }
         }
-
+        
+        $totalamount =  $session_cart['total_price'];
+        
+        $session_cart['nearpricenote'] = ""; 
+        $nearamountcheck = SHPPING_MINVALUE_VIEW-30;
+        if(SHPPING_MINVALUE_VIEW>$totalamount && $totalamount>$nearamountcheck){
+             $session_cart['nearpricenote'] = "Your cart total amount is closed to $".SHPPING_MINVALUE_VIEW.", order more to get free delivery..";
+        }
+ 
+         
+ 
         $session_cart['sub_total_price'] = $session_cart['total_price'];
 
         $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];

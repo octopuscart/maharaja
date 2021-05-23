@@ -96,7 +96,9 @@ $this->load->view('layout/header');
 <div class="cart-page-area">
     <div class="container" ng-if="globleCartData.total_quantity">
         <div class="row">
-
+ <?php
+                    $this->load->view('Cart/commanmessage');
+                    ?>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                 <div class="panel panel-default">

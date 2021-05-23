@@ -22,6 +22,9 @@ $this->load->view('layout/header');
 <!-- Cart Page Area Start Here -->
 <div class="cart-page-area">
     <div class="container" ng-if="globleCartData.total_quantity">
+        <?php
+        $this->load->view('Cart/commanmessage', array("showdeliverynote"=>true));
+        ?>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="cart-page-top table-responsive">
@@ -62,37 +65,37 @@ $this->load->view('layout/header');
                                 <td class="amount">{{product.total_price|currency:" "}}</td>
                                 <td class="dismiss"><a href="#"  ng-click="removeCart(product.product_id)"><i class="fa fa-times" aria-hidden="true"></i></a></td>
                             </tr>
-                            
-                            
+
+
                             <tr>
-                                        <td colspan="4" class="text_right">
-                                           SUB TOTAL
-                                        </td>
-                                        <td class="text-center amount">
-                                            {{globleCartData.sub_total_price|currency:"<?php echo globle_currency; ?>"}}
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td colspan="4" class="text_right">
-                                            SHIPPING 
-                                        </td>
-                                        <td class="text-center amount">
-                                            {{globleCartData.shipping_price|currency:"<?php echo globle_currency; ?>"}}
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4" class="text_right">
-                                            TOTAL
-                                        </td>
-                                        <td class="text-center amount">
-                                            {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}}
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                            
+                                <td colspan="4" class="text_right">
+                                    SUB TOTAL
+                                </td>
+                                <td class="text-center amount">
+                                    {{globleCartData.sub_total_price|currency:"<?php echo globle_currency; ?>"}}
+                                </td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="4" class="text_right">
+                                    SHIPPING 
+                                </td>
+                                <td class="text-center amount">
+                                    {{globleCartData.shipping_price|currency:"<?php echo globle_currency; ?>"}}
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="text_right">
+                                    TOTAL
+                                </td>
+                                <td class="text-center amount">
+                                    {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}}
+                                </td>
+                                <td></td>
+                            </tr>
+
                             <tr>
                                 <td colspan="6" class="text_right">
                                     <div class="proceed-button">
@@ -111,7 +114,7 @@ $this->load->view('layout/header');
 
     </div>
 
-   <?php
+    <?php
     $this->load->view('Cart/noproduct');
     ?>
 

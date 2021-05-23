@@ -96,7 +96,9 @@ $this->load->view('layout/header');
 <div class="cart-page-area">
     <div class="container" ng-if="globleCartData.total_quantity">
         <div class="row">
-
+            <?php
+            $this->load->view('Cart/commanmessage');
+            ?>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                 <div class="panel panel-default">
@@ -107,7 +109,7 @@ $this->load->view('layout/header');
                                     <i class="fa fa-shopping-cart fa-stack-1x"></i>
                                     <i class="ion-bag fa-stack-1x "></i>
                                 </span>   My Shopping Bag
-                                <span style="float: right; line-height: 29px;" class="ng-binding">Total: {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} (<small style="color: #fff" class="ng-binding">{{globleCartData.total_quantity}}</small>)</span> 
+                                <span style="float: right; line-height: 29px;" class="ng-binding">Total: {{globleCartData.total_price|currency:"<?php echo globle_currency; ?>"}} (<small style="color: #000" class="ng-binding">{{globleCartData.total_quantity}}</small>)</span> 
                             </a>
                         </h4>
                     </div>

@@ -100,6 +100,9 @@ $this->load->view('layout/header');
 <div class="cart-page-area">
     <div class="container" ng-if="globleCartData.total_quantity">
         <div class="row">
+             <?php
+            $this->load->view('Cart/commanmessage');
+            ?>
             <?php
             $this->load->view('Cart/itemblock', array('vtype' => 'items'));
             ?>
@@ -130,6 +133,9 @@ $this->load->view('layout/header');
                             <form action="#" method="post">
                                 <div class="product-details-tab-area" style="margin: 0;">
                                     <div class="row">
+                                          <?php
+                                        $this->load->view('Cart/carttotal');
+                                        ?>
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <ul >
                                                 <?php

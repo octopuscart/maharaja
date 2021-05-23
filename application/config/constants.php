@@ -71,6 +71,10 @@ define('ORDER_PREFIX', $globleConnectCartCheckout['order_prefix']);
 define('PRODUCT_PATH_PRE', $globleConnectCartCheckout['product_path_pre']);
 define('PRODUCT_PATH_POST', $globleConnectCartCheckout['product_path_post']);
 
+define('SHPPING_MINVALUE', 299);
+define('SHPPING_MINVALUE_VIEW', 300);
+define('SHPPING_PRICE', 30);
+
 
 
 
