@@ -1665,3 +1665,23 @@ h5.theaterblocktext {
     overflow: auto;
     max-height: 350px;
 }
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+    color:yellow;
+}
+
+@keyframes blinker {
+  50% {
+    /*opacity: 0.3;*/
+    color:red;
+  }
+}
+
+
+.main-menu-area nav ul > li {
+    display: inline-block;
+    position: relative;
+    padding: 6px 0 12px 0;
+    LINE-HEIGHT: 50px;
+}

@@ -212,8 +212,8 @@ class Cart extends CI_Controller {
                 $data['user_credits'] = $user_credits;
                   $address = $user_address_details[0];
 
-                $session_cart['shipping_price'] = 30;
-                if ($session_cart['total_price'] > 299) {
+                $session_cart['shipping_price'] = SHPPING_PRICE;
+                if ($session_cart['total_price'] > SHPPING_MINVALUE) {
                     $session_cart['shipping_price'] = 0;
                 }
                 if ($address['zipcode'] == 'on') {

@@ -67,6 +67,16 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     $scope.getCartData();
 
 
+    $scope.checkTotalNearBy = function () {
+        var nearbynote = $scope.globleCartData['nearpricenote'];
+        if (nearbynote) {
+            swal({
+                title: nearbynote,
+            })
+        }
+    }
+
+
     //change productverient
     $scope.changeProductVarient = function (verient, productobj) {
         console.log(productobj, verient)
@@ -135,9 +145,11 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
 
             }).then(
                     function () {
+                        $scope.checkTotalNearBy();
                     },
                     function (dismiss) {
                         if (dismiss === 'timer') {
+                            $scope.checkTotalNearBy();
                         }
                     }
             )
