@@ -1685,3 +1685,8 @@ h5.theaterblocktext {
     padding: 6px 0 12px 0;
     LINE-HEIGHT: 50px;
 }
+
+.smallnotepopup{
+    font-size: 12px;
+    color:red;
+}

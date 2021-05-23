@@ -64,17 +64,18 @@ class Api extends REST_Controller {
                 $session_cart['shipping_price'] = 0;
             }
         }
-        
-        $totalamount =  $session_cart['total_price'];
-        
-        $session_cart['nearpricenote'] = ""; 
-        $nearamountcheck = SHPPING_MINVALUE_VIEW-30;
-        if(SHPPING_MINVALUE_VIEW>$totalamount && $totalamount>$nearamountcheck){
-             $session_cart['nearpricenote'] = "Your cart total amount is closed to $".SHPPING_MINVALUE_VIEW.", order more to get free delivery..";
+
+        $totalamount = $session_cart['total_price'];
+
+        $session_cart['nearpricenote'] = "";
+        $nearamountcheck = SHPPING_MINVALUE_VIEW - 60;
+        if (SHPPING_MINVALUE_VIEW > $totalamount && $totalamount > $nearamountcheck) {
+            $session_cart['nearpricenote'] = "Cart Value: $$totalamount<br/>Your cart value is near by $" . SHPPING_MINVALUE_VIEW . ", order more to get free delivery..<br/><span class='smallnotepopup'>" .
+                    "Free Delivery In Other Location (On Order value > $" . SHPPING_MINVALUE_VIEW . ".)</span>";
         }
- 
-         
- 
+
+
+
         $session_cart['sub_total_price'] = $session_cart['total_price'];
 
         $session_cart['total_price'] = $session_cart['total_price'] + $session_cart['shipping_price'];
@@ -400,10 +401,10 @@ class Api extends REST_Controller {
         $notifydata = array(
             "order_id" => $orderkey,
             "payment_data" => json_encode($postdata),
-            "datetime" => date('Y-m-d H:i:s')." API"
+            "datetime" => date('Y-m-d H:i:s') . " API"
         );
         $this->db->insert('payme_status', $notifydata);
-        $this->response(array("status"=>200));
+        $this->response(array("status" => 200));
     }
 
 }
