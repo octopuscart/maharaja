@@ -83,7 +83,54 @@ $this->load->view('layout/header');
 
             <!-- Tab panes -->
             <div class="tab-content">
- 
+                <div role="tabpanel" class="tab-pane active" id="purchase">
+
+                    <form action="#" method="post" style="margin-top:10px;padding: 0px 50px;">
+                        <h4 style="margin-bottom: 2px;">Contact Information</h4>
+
+                        <div class="row" >
+                            <div class=" col-md-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon " id="sizing-addon2">Name</span>
+                                    <input type="text" class="form-control" name='name' placeholder="Name" aria-describedby="sizing-addon2">
+                                </div>
+                            </div>
+                            <div class=" col-md-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon " id="sizing-addon2">Email</span>
+                                    <input type="email" class="form-control" name='email' placeholder="Email" aria-describedby="sizing-addon2">
+                                </div>
+                            </div>    
+                            <div class=" col-md-3">    
+                                <div class="input-group">
+                                    <span class="input-group-addon " id="sizing-addon2">Contact No.</span>
+                                    <input type="tel" class="form-control" name='contact_no' placeholder="Contact No." aria-describedby="sizing-addon2">
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <h4 style="margin-bottom: 2px;">Payment Option</h4>
+
+                        <div class="row" >
+                            <button class="btn btn-default paymentbutton" type="button">
+                                <img src="<?php echo base_url(); ?>assets/paymentstatus/payme.jpg" style="height: 50px;border-radius: 10px;">
+
+                            </button>
+                            <button class="btn btn-default paymentbutton" type="button">
+                                <img src="<?php echo base_url(); ?>assets/paymentstatus/wechat.jpg" style="height: 50px;border-radius: 10px;">
+
+                            </button>
+                            <button class="btn btn-default paymentbutton" type="button">
+                                <img src="<?php echo base_url(); ?>assets/paymentstatus/alipay.jpg" style="height: 50px;border-radius: 10px;">
+
+                            </button>
+
+                        </div>
+                        <hr/>
+                        <button class='btn btn-default' style='background: #d92229;border-radius: 15px;color: white;' type='submit' name='payment'>Proceed Payment  <span aria-hidden="true">&rarr;</span></button>
+
+                    </form>
+                </div>
                 <div role="tabpanel" class="tab-pane" id="reserve">
                     <form action="#" method="post" style="margin-top:10px;padding: 0px 50px;">
                         <h4 style="margin-bottom: 2px;">Contact Information</h4>

@@ -123,7 +123,7 @@ class Api extends REST_Controller {
 //        $query = $this->db->select('title, id, file_name, price')->from('products')->where("title LIKE '%$keyword%' ")->get();
 //        $searchobj = $query->result_array();
 
-        $pquery = "SELECT title, file_name, id, price, credit_limit from products where title like '% $query %' or title like '%$query %' and status = 1 order by credit_limit desc";
+        $pquery = "SELECT title, file_name, id, price, credit_limit from products where (title like '%$query%') or (title like '%$query %') or (short_description like '%$query %') and (status = 1) and (stock_status = 'In Stock') ";
         $attr_products = $this->Product_model->query_exe($pquery);
 
 
@@ -131,7 +131,7 @@ class Api extends REST_Controller {
     }
 
     public function prefetchdata_get() {
-        $pquery = "SELECT title, file_name, id, price from products where status = 1 order by credit_limit desc limit 0,10";
+       $pquery = "SELECT title, file_name, id, price from products where status = 1  and stock_status = 'In Stock'  limit 0,10";
         $attr_products = $this->Product_model->query_exe($pquery);
         $this->response($attr_products);
     }
