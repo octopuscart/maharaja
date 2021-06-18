@@ -271,7 +271,7 @@ class PaymePayment extends CI_Controller {
         $url = $this->protocol . $this->endpoint . $url;
         $curldata = $this->useCurl($url, $headers, $body);
 
-       $paymentRequestId = isset($curldata["paymentRequestId"]) ? $curldata["paymentRequestId"] : "";
+        $paymentRequestId = isset($curldata["paymentRequestId"]) ? $curldata["paymentRequestId"] : "";
         $this->session->set_userdata('paymentRequestId', $paymentRequestId);
         $data["paymentdata"] = $curldata;
         $data["order_details"] = $order_details;
@@ -296,8 +296,9 @@ class PaymePayment extends CI_Controller {
     }
 
     function checkstatus() {
-      echo  $paymentRequestId = $this->session->userdata();
-        $paymentRequestId = "fb72ec9e-b085-4499-8817-438a164e5281";
+        $paymentRequestId = $this->session->userdata();
+      print_r($paymentRequestId);
+//        $paymentRequestId = "fb72ec9e-b085-4499-8817-438a164e5281";
         $curldata = $this->query($paymentRequestId);
         print_r($curldata);
 //        $paymentarray = array(
