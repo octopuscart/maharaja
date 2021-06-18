@@ -80,10 +80,10 @@ $categorylistsparent = $querymenu->result_array();
                         <div class="footer-box">
                             <h3>My Account</h3>
                             <ul class="info-list">
-                                 <li><a href="">Login</a></li>
-                                <li><a href="">My Account</a></li>
-                                <li><a href="">Order History</a></li>
-                                <li><a href="">View Cart</a></li>
+                                 <li><a href="<?php echo site_url('Account/login')?>"">Login</a></li>
+                                <li><a href="<?php echo site_url('Account/profile')?>"">My Account</a></li>
+                                <li><a href="<?php echo site_url('Account/orderList')?>"">Order History</a></li>
+                                <li><a href="<?php echo site_url('Cart/details')?>"">View Cart</a></li>
                             </ul>
                         </div>
                     </div>
