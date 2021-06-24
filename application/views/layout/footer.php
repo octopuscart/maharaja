@@ -94,7 +94,7 @@ $categorylistsparent = $querymenu->result_array();
                                 <?php
                                 foreach ($categorylistsparent as $key => $value) {
                                     ?>
-                                 <li><a href=""><?php echo $value['category_name'];?></a></li>
+                                 <li><a href="<?php echo site_url('Product/productList/1/' . $value['id']); ?>"><?php echo $value['category_name'];?></a></li>
                                 <?php
                                   
                                 }
