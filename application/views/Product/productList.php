@@ -65,6 +65,10 @@ $image2 = "";
             min-height: 260px;
     
         }*/
+    
+    .processbuttonblock{
+           height: 35px;
+    }
 
 </style>
 
@@ -201,8 +205,9 @@ $image2 = "";
 
 
                                     <div class="product-img-holder" >
-                                        <img src="<?php echo base_url(); ?>assets/images/defaultProduct.png" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
-                                             background-position: center;" />
+                                        <img src="<?php echo base_url(); ?>assets/images/defaultProduct.png" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}}); background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;" />
                                     </div>
 
                                     <div class="product-content-holder" ng-if="product.hasvarient == 0">
@@ -216,7 +221,7 @@ $image2 = "";
       <option  selected  >{{product.description}} - {{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</option>
   </select>-->
                                             </div>
-
+{{product.price}}
 
                                             <span><span  style="font-size: 11px;" ng-if="product.varients[product.selectedobject].sale_price > 0">{{product.varients[product.selectedobject].regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.varients[product.selectedobject].price|currency:"<?php echo globle_currency; ?> "}}</span>
 
@@ -224,17 +229,18 @@ $image2 = "";
                                             <span><span  style="font-size: 11px;" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
 
                                         </h3>
-                                        <div class="productbuttonscontainer" ng-if="product.stock_status == 'In Stock'">
+                                        <div class="processbuttonblock">
+                                            <div class="productbuttonscontainer" ng-if="product.stock_status == 'In Stock'">
 
-                                            <button ng-click="addToCart(product.product_id, 1)" class="productbutton" style="    background: #d92229;
-                                                    color: white;
-                                                    border-color: #d92229;">Add To Cart</button>
-                                            <button ng-click="addToBuy(product.product_id, 1)" type="button" class="productbutton">Buy Now</button>
+                                                <button ng-click="addToCart(product.product_id, 1)" class="productbutton" style="    background: #d92229;
+                                                        color: white;
+                                                        border-color: #d92229;">Add To Cart</button>
+                                                <button ng-click="addToBuy(product.product_id, 1)" type="button" class="productbutton">Buy Now</button>
 
-                                        </div>  
-                                        {{product.stock_status=='Out Of Stock'?"Out Of Stock":""}}
+                                            </div>  
+                                            {{product.stock_status=='Out Of Stock'?"Out Of Stock":""}}
 
-
+                                        </div>
                                     </div>
 
 
@@ -253,18 +259,19 @@ $image2 = "";
 
                                         </h3>
 
+                                        <div class="processbuttonblock">
+                                            <div class="productbuttonscontainer" ng-if="product.varients[product.selectedobject].stock_status == 'In Stock'">
 
-                                        <div class="productbuttonscontainer" ng-if="product.varients[product.selectedobject].stock_status == 'In Stock'">
+                                                <button ng-click="addToCart(product.varients[product.selectedobject].id, 1)" class="productbutton" style="    background: #d92229;
+                                                        color: white;
+                                                        border-color: #d92229;">Add To Cart</button>
+                                                <button ng-click="addToBuy(product.varients[product.selectedobject].id, 1)" type="button" class="productbutton">Buy Now</button>
 
-                                            <button ng-click="addToCart(product.varients[product.selectedobject].id, 1)" class="productbutton" style="    background: #d92229;
-                                                    color: white;
-                                                    border-color: #d92229;">Add To Cart</button>
-                                            <button ng-click="addToBuy(product.varients[product.selectedobject].id, 1)" type="button" class="productbutton">Buy Now</button>
+                                            </div>  
 
-                                        </div>  
-                                        {{product.varients[product.selectedobject].stock_status=='Out Of Stock'?"Out Of Stock":""}}
+                                            {{product.varients[product.selectedobject].stock_status=='Out Of Stock'?"Out Of Stock":""}}
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
