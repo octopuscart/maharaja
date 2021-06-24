@@ -65,9 +65,9 @@ $image2 = "";
             min-height: 260px;
     
         }*/
-    
+
     .processbuttonblock{
-           height: 35px;
+        height: 35px;
     }
 
 </style>
@@ -206,8 +206,8 @@ $image2 = "";
 
                                     <div class="product-img-holder" >
                                         <img src="<?php echo base_url(); ?>assets/images/defaultProduct.png" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}}); background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;" />
+                                             background-position: center;
+                                             background-repeat: no-repeat;" />
                                     </div>
 
                                     <div class="product-content-holder" ng-if="product.hasvarient == 0">
@@ -221,9 +221,8 @@ $image2 = "";
       <option  selected  >{{product.description}} - {{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</option>
   </select>-->
                                             </div>
-{{product.price}}
+                                            <!--{{product.price}}-->
 
-                                            <span><span  style="font-size: 11px;" ng-if="product.varients[product.selectedobject].sale_price > 0">{{product.varients[product.selectedobject].regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.varients[product.selectedobject].price|currency:"<?php echo globle_currency; ?> "}}</span>
 
 
                                             <span><span  style="font-size: 11px;" ng-if="product.sale_price > 0">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
