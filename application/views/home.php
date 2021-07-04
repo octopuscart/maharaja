@@ -16,12 +16,13 @@ $this->load->view('layout/header');
     <div class="main-slider2">
         <div class="bend niceties preview-1">
             <div id="ensign-nivoslider-3" class="slides">
+                <img src="<?php echo base_url(); ?>assets/sliders/24032021/masale.jpg" alt="" title="#slider-direction-6" />
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/main_slider2.jpg" alt="" title="#slider-direction-6" />
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/indian_grocery.jpg" alt="" title="#slider-direction-7" />
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/spice.jpg" alt="" title="#slider-direction-8" />
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/vegetables.jpg" alt="" title="#slider-direction-9" />
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/dairy.jpg" alt="" title="#slider-direction-10" />
-                <img src="<?php echo base_url(); ?>assets/sliders/24032021/payment2.jpg" alt="" title="#slider-direction-11" />
+                <!--<img src="<?php echo base_url(); ?>assets/sliders/24032021/payment2.jpg" alt="" title="#slider-direction-11" />-->
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/cinema.jpg" alt="" title="#slider-direction-12" />
 
                 <img src="<?php echo base_url(); ?>assets/sliders/home-banner-2.jpg" alt="" title="#slider-direction-1" />
