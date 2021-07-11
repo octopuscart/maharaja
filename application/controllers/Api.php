@@ -407,7 +407,7 @@ class Api extends REST_Controller {
         $this->response(array("status" => 200));
     }
     
-      function userMailSend($useer_id){
+      function userMailSend($user_id){
         $this->User_model->registration_mail($user_id);
     }
 
