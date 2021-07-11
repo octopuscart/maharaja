@@ -406,6 +406,10 @@ class Api extends REST_Controller {
         $this->db->insert('payme_status', $notifydata);
         $this->response(array("status" => 200));
     }
+    
+      function userMailSend($useer_id){
+        $this->User_model->registration_mail($user_id);
+    }
 
 }
 
