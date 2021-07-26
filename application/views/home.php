@@ -16,6 +16,9 @@ $this->load->view('layout/header');
     <div class="main-slider2">
         <div class="bend niceties preview-1">
             <div id="ensign-nivoslider-3" class="slides">
+                <img src="<?php echo base_url(); ?>assets/sliders/27072021/consumption_vouc.jpg" alt="" title="#slider-direction-6" />
+                <img src="<?php echo base_url(); ?>assets/sliders/27072021/pizza.jpg" alt="" title="#slider-direction-6" />
+
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/masale.jpg" alt="" title="#slider-direction-6" />
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/main_slider2.jpg" alt="" title="#slider-direction-6" />
                 <img src="<?php echo base_url(); ?>assets/sliders/24032021/indian_grocery.jpg" alt="" title="#slider-direction-7" />
