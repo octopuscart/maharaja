@@ -124,9 +124,9 @@ foreach ($parentmenu as $key => $value) {
 
         margin-left: -90px;
     }
-    
+
     .main-menu-area .smalltext{
-        font-size: 9px;
+        font-size: 8px;
     }
 </style>
 
@@ -211,14 +211,14 @@ foreach ($parentmenu as $key => $value) {
                                                 <li><a href="<?php echo site_url('Account/profile'); ?>"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
                                                 <li><a href="<?php echo site_url('Account/logout'); ?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 
-    <?php
-} else {
-    ?>
+                                                <?php
+                                            } else {
+                                                ?>
                                                 <li><a href="<?php echo site_url('Account/login'); ?>"><i class="fa fa-lock" aria-hidden="true"></i> Account</a></li>
 
-    <?php
-}
-?>
+                                                <?php
+                                            }
+                                            ?>
 
 
 
@@ -259,9 +259,9 @@ foreach ($parentmenu as $key => $value) {
                                                     <font>My Cart</font>
                                                     <i class="fa fa-shopping-cart"></i><span>{{globleCartData.total_quantity}}</span>
                                                 </a>
-<?php
-$this->load->view('layout/topcart');
-?>
+                                                <?php
+                                                $this->load->view('layout/topcart');
+                                                ?>
                                             </div>
                                         </li>
 
@@ -281,34 +281,34 @@ $this->load->view('layout/topcart');
                                 <div class="category-menu-area" id="category-menu-area">
                                     <h2 class="category-menu-title"><a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>Categories</h2>
                                     <ul class="category-menu-area-inner">
-                                                <?php
-                                                foreach ($menucontainer as $key => $value) {
-                                                    $children = $value['children'];
-                                                    ?>
+                                        <?php
+                                        foreach ($menucontainer as $key => $value) {
+                                            $children = $value['children'];
+                                            ?>
                                             <li><a href="<?php echo site_url('Product/productList/1/' . $value['id']); ?>">
-                                                <?php echo $value['category_name']; ?>
-                                                <?php if ($children) { ?>
+                                                    <?php echo $value['category_name']; ?>
+                                                    <?php if ($children) { ?>
                                                         <span><i class="flaticon-next"></i></span>
                                                     </a>
                                                     <ul class="dropdown-menu">
-                                                    <?php
-                                                    foreach ($children as $ckey => $cvalue) {
-                                                        ?>
+                                                        <?php
+                                                        foreach ($children as $ckey => $cvalue) {
+                                                            ?>
                                                             <li><a href="<?php echo site_url('Product/productList/1/' . $cvalue['id']); ?>"><?php echo $cvalue['category_name']; ?></a></li>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </ul>
                                                     <?php
+                                                } else {
+                                                    ?>
+                                                    </a><?php
                                                 }
                                                 ?>
-                                                    </ul>
-        <?php
-    } else {
-        ?>
-                                                    </a><?php
-    }
-    ?>
                                             </li>
-    <?php
-}
-?>
+                                            <?php
+                                        }
+                                        ?>
                                     </ul>
                                 </div>
                             </div>
@@ -316,11 +316,15 @@ $this->load->view('layout/topcart');
                                 <div class="main-menu-area hideonstickheader">
                                     <nav>
                                         <ul>
-                                            <li class="active"><a href="#">Offers</a></li>
-                                            <li><a href="http://maharajatickets.com/" target="_blank">Movie Tickets</a></li>
+<!--                                            <li class="active"><a href="#">Offers</a></li>-->
+                                            <li><a href="http://maharajatickets.com/" target="_blank">Movie Tickets<br/><span class="smalltext">Bringing you the best of Indian Cinema</span></a></li>
                                             <li><a href="https://www.woodlandshk.com/"  target="_blank">Woodlands <br/><span class="smalltext">Indian Vegetarian Restaurant</span></a></li>
                                             <li><a href="https://www.helloindia.com.hk/"  target="_blank">Hello India <br/> <span class="smalltext">World Of Delicious Indian Cuisine</span>
-                                                </a></li>
+                                                </a>
+                                            </li>
+                                            <li><a href="<?php echo site_url("maharaja-care")?>"  >Maharaja Care <br/> <span class="smalltext">Prevention is better then cure</span>
+                                                </a>
+                                            </li>
 
                                         </ul>
                                     </nav>
@@ -347,9 +351,9 @@ $this->load->view('layout/topcart');
 
                                                         <i class="fa fa-shopping-cart"></i><span>{{globleCartData.total_quantity}}</span>
                                                     </a>
-<?php
-$this->load->view('layout/topcart');
-?>
+                                                    <?php
+                                                    $this->load->view('layout/topcart');
+                                                    ?>
                                                 </div>
                                             </li>
 
@@ -367,34 +371,34 @@ $this->load->view('layout/topcart');
                                     <div class="mobile-menu">
                                         <nav id="dropdown">
                                             <ul>
-                                                        <?php
-                                                        foreach ($menucontainer as $key => $value) {
-                                                            $children = $value['children'];
-                                                            ?>
+                                                <?php
+                                                foreach ($menucontainer as $key => $value) {
+                                                    $children = $value['children'];
+                                                    ?>
                                                     <li><a href="<?php echo site_url('Product/productList/1/' . $value['id']); ?>">
-                                                        <?php echo $value['category_name']; ?>
-                                                        <?php if ($children) { ?>
+                                                            <?php echo $value['category_name']; ?>
+                                                            <?php if ($children) { ?>
 
                                                             </a>
                                                             <ul class="dropdown-menu">
-                                                            <?php
-                                                            foreach ($children as $ckey => $cvalue) {
-                                                                ?>
+                                                                <?php
+                                                                foreach ($children as $ckey => $cvalue) {
+                                                                    ?>
                                                                     <li><a href="<?php echo site_url('Product/productList/1/' . $cvalue['id']); ?>"><?php echo $cvalue['category_name']; ?></a></li>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                            </ul>
                                                             <?php
+                                                        } else {
+                                                            ?>
+                                                            </a><?php
                                                         }
                                                         ?>
-                                                            </ul>
-        <?php
-    } else {
-        ?>
-                                                            </a><?php
-    }
-    ?>
                                                     </li>
-    <?php
-}
-?>
+                                                    <?php
+                                                }
+                                                ?>
                                             </ul>
                                         </nav>
                                     </div>

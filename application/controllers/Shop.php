@@ -111,5 +111,9 @@ class Shop extends CI_Controller {
     function privacy_policy(){
            $this->load->view('pages/pp');
     }
+    
+    function maharajacare(){
+        $this->load->view('pages/maharajacare');
+    }
 
 }

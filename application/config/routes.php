@@ -56,7 +56,7 @@ $route['contact'] = 'Shop/contactus';
 $route['about-us'] = 'Shop/aboutus';
 $route['privacy-policy'] = 'Shop/privacy_policy';
 
-
+$route['maharaja-care'] = 'Shop/maharajacare';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['paymentresult'] = 'PaymentGatway/paymentResult';
