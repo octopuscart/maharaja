@@ -38,7 +38,7 @@ $this->load->view('layout/header');
                 <h3><a href="https://wa.me/85261428189" target="_blank"><i class="fa fa-whatsapp"></i> +(852) 6142 8189</a></h3>
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <a href="https://bit.ly/3AXYrcW" name="sendmessage" value="sendmessage" class="btn-send-message">Book Now</a>
+                        <a href="https://bit.ly/3AXYrcW" target="_blank" name="sendmessage" value="sendmessage" class="btn-send-message">Book Now</a>
                     </div>
                 </div>
             </div>
