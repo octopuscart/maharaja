@@ -35,6 +35,33 @@ $this->load->view('layout/header');
                     An unique  and exclusive health care consultation services offered by the best in town health centers located in Mongkok and Causeway bay.
                     Providing VIP(Maharaja) services to all our customers at an exceptionally best prices. Health Packages vary from Basic, intermediate, targeted and premium. 
                 </p>
+                <ul>
+                    <?php
+                    $checkuplist = [
+                        "Standard Health Package",
+                        "Priority Health Check Plan",
+                        "Annual Health Check Check Plan",
+                        "Royal Comprehensive Health Check Plan",
+                        "Premium Executive Health Check Plan",
+                        "Executive Cardio Health Package",
+                        "Women selective Health Check Plan",
+                        "Heart Health Screening Plan",
+                        "Premium Health Check Plan",
+                        "Comprehensive DNA Test (on 20 categories)"
+                    ];
+                    foreach ($checkuplist as $key => $value) {
+                        ?>
+                        <li>
+                           <?php
+                           echo $value;
+                           ?>
+                        </li>
+                        <?php
+                    }
+                    ?>
+
+                </ul>
+                <hr/>
                 <h3><a href="https://wa.me/85261428189" target="_blank"><i class="fa fa-whatsapp"></i> +(852) 6142 8189</a></h3>
                 <div class="col-sm-12">
                     <div class="form-group">
