@@ -322,7 +322,7 @@ foreach ($parentmenu as $key => $value) {
                                             <li><a href="https://www.helloindia.com.hk/"  target="_blank">Hello India <br/> <span class="smalltext">World Of Delicious Indian Cuisine</span>
                                                 </a>
                                             </li>
-                                            <li><a href="<?php echo site_url("maharaja-care")?>"  >Maharaja Care <br/> <span class="smalltext">Prevention is better then cure</span>
+                                            <li><a href="<?php echo site_url("maharaja-care")?>"  >Maharaja Care <br/> <span class="smalltext">Prevention is better than cure</span>
                                                 </a>
                                             </li>
 

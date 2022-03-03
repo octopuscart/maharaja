@@ -123,7 +123,7 @@ class Api extends REST_Controller {
 //        $query = $this->db->select('title, id, file_name, price')->from('products')->where("title LIKE '%$keyword%' ")->get();
 //        $searchobj = $query->result_array();
 
-        $pquery = "SELECT title, file_name, id, price, credit_limit from products where (title like '%$query%') or (title like '%$query %') or (short_description like '%$query %') and (status = 1) and (stock_status = 'In Stock') ";
+        $pquery = "SELECT sku, title, file_name, id, price, credit_limit from products where ((title like '%$query%') or (title like '%$query %') or (short_description like '%$query %')) and (status = 1) and (stock_status = 'In Stock') ";
         $attr_products = $this->Product_model->query_exe($pquery);
 
 
@@ -131,7 +131,7 @@ class Api extends REST_Controller {
     }
 
     public function prefetchdata_get() {
-       $pquery = "SELECT title, file_name, id, price from products where status = 1  and stock_status = 'In Stock'  limit 0,100";
+        $pquery = "SELECT sku, title, file_name, id, price from products where status = 1  and stock_status = 'In Stock'  limit 0,100";
         $attr_products = $this->Product_model->query_exe($pquery);
         $this->response($attr_products);
     }
@@ -236,6 +236,8 @@ class Api extends REST_Controller {
     public function productListOffersApi_get() {
         $this->output->set_header('Content-type: application/json');
         $this->db->where('offer', 1);
+        $this->db->where('stock_status', "In Stock");
+        $this->db->where('status', "1");
         $this->db->where('sale_price!=', "");
         $this->db->limit(6);
         $this->db->order_by("id desc");
@@ -406,8 +408,8 @@ class Api extends REST_Controller {
         $this->db->insert('payme_status', $notifydata);
         $this->response(array("status" => 200));
     }
-    
-      function userMailSend_get($user_id){
+
+    function userMailSend_get($user_id) {
         $this->User_model->registration_mail($user_id);
     }
 
