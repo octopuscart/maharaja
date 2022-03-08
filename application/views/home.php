@@ -95,7 +95,40 @@ $this->load->view('layout/header');
         </div>
     </div>
     <!-- Slider Area End Here -->
+    <div class="product2-area" style="padding-bottom: 0px;">
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="section-title">
+                        <span class="title-bar-left"></span>
+                        <h2>Get from the best online store</h2>
+                        <span class="title-bar-right"></span>
+                    </div>
+                </div>
+            </div>
 
+            <div class="row featuredContainer">
+                <?php
+                $this->db->where("parent_id", "0");
+                $query = $this->db->get('category');
+                $categories = $query->result_array();
+                foreach ($categories as $key => $value) {
+                    ?>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 text-center categoryfrontblock" >
+                        <a href="<?php echo site_url("Product/productList/1/".$value["id"]);?>">
+                        <img src="<?php echo ADMINURL."/assets/media/".$value["image"];?>"/>
+                        <h5 ><?php
+                        echo $value["category_name"];
+                        ?></h5>
+                        </a>
+                    </div>
+                    <?php
+                }
+                ?>
+
+            </div>
+        </div>
+    </div>
 
 
     <div class="product2-area">
@@ -144,34 +177,11 @@ $this->load->view('layout/header');
             </div>
         </div>
     </div>
+
+
     <img src="<?php echo base_url(); ?>assets/movies/moviebanner.jpg" alt="offer" style="width:100%">
 
-    <div class="offer-area1 hidden-after-desk movieblockhome">
 
-        <div class="" style="padding: 0px 50px;">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="brand-area-box-l" style="padding-top: 24px;">
-                        <span>Movie Ticket Price From </span>
-                        <h1>HK$ 180 Only</h1>
-                        <p>Choose your Ticket Price<br/> $220 (J-O) - $200 (E-I) - $180 (C-D)</p>
-                        <a href="http://maharajatickets.com/" target="_blank" class="btn-shop-now-fill">Book Now</a>
-                    </div>
-                </div>
-                <div id="countdown2">
-<!--                    <div class="countdown-section"><h3>7th</h3> <p>FAB</p> </div>
-                    <div class="countdown-section"><h3>8th</h3> <p>FAB</p> </div>
-                    <div class="countdown-section"><h3>9th</h3> <p>FAB</p> </div>-->
-
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="brand-area-box-r">
-                        <a href="#"><img src="<?php echo base_url(); ?>assets/movies/movieposter1.jpg" alt="offer"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="container block52">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="    margin-top: 24px;">
@@ -218,12 +228,7 @@ $this->load->view('layout/header');
     <!-- Brand Area End Here -->
 
 
-    <div class="container">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><a href="<?php echo site_url('/'); ?>"><img src="<?php echo base_url(); ?>assets/images/ext/WhatsApp_Image_2018-10-15_at_11.30.10_PM.jpeg" alt=""></a></div>
-            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('/'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/WhatsApp_Image_2018-10-15_at_11.30.11_PM.jpeg" alt=""></a></div>
-        </div>
-    </div>
+
 
 </div>
 <?php

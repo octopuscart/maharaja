@@ -185,3 +185,12 @@ span.keywordfooter {
     overflow-y: auto;
     height: 400px;
 }
+
+.categoryfrontblock{
+    height:200px;
+}
+
+.categoryfrontblock img{
+    height:100px;
+    width:100px;
+}
