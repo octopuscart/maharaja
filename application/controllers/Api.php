@@ -246,6 +246,50 @@ class Api extends REST_Controller {
         $this->response($offerproduct);
     }
 
+    public function productListCategoryApi_get() {
+        $this->output->set_header('Content-type: application/json');
+        $this->db->where('available_on_home', "yes");
+        $query = $this->db->get('category');
+        $homecategories = $query->result_array();
+
+        $resultarray = array();
+        if ($homecategories) {
+            foreach ($homecategories as $key => $value) {
+                $category_id = $value["id"];
+                $categoriesString1 = $this->Product_model->stringCategories($category_id) . ", " . $category_id;
+                $categoriesString1 = ltrim($categoriesString1, ", ");
+                $categoriesString = explode(", ", $categoriesString1);
+                $queryrow = "select id, count, price, sku,file_name,title,price from (
+    SELECT cr.product_id as id, count(cr.product_id) as count, prd.title, prd.sku, prd.price, prd.file_name FROM cart as cr 
+    join products as prd on prd.id = cr.product_id
+    where prd.category_id in ($categoriesString1) and stock_status = 'In Stock' and prd.status='1' and variant_product_of = ''
+    group by cr.product_id
+    limit 0, 12
+) as counter order by count desc";
+
+                $queryc = $this->db->query($queryrow);
+
+
+
+//
+//                $this->db->where_in("category_id", $categoriesString);
+//                $this->db->where('stock_status', "In Stock");
+//                $this->db->where('status', "1");
+//                $this->db->where('variant_product_of', "");
+//                $this->db->limit(12);
+//                $this->db->order_by("id desc");
+//                $query = $this->db->get('products');
+                $topproduct = $queryc->result_array();
+
+                $value["products"] = $topproduct;
+                array_push($resultarray, $value);
+            }
+        }
+
+
+        $this->response($resultarray);
+    }
+
     //ProductList APi
     public function productListSearchApi_get($searchkey) {
         $attrdatak = $this->get();
