@@ -91,12 +91,19 @@
             fbq('init', '2742995455801310');
             fbq('track', 'PageView');
         </script>
-    <noscript><img height="1" width="1" style="display:none"
-                   src="https://www.facebook.com/tr?id=2742995455801310&ev=PageView&noscript=1"
-                   /></noscript>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2742995455801310&ev=PageView&noscript=1"/></noscript>
     <!-- End Facebook Pixel Code -->
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92639719-1"></script>
+    <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
+            gtag('config', 'UA-92639719-1');
+    </script>
 </head>
 
 <?php
@@ -316,13 +323,13 @@ foreach ($parentmenu as $key => $value) {
                                 <div class="main-menu-area hideonstickheader">
                                     <nav>
                                         <ul>
-<!--                                            <li class="active"><a href="#">Offers</a></li>-->
+                                            <!--                                            <li class="active"><a href="#">Offers</a></li>-->
                                             <li><a href="http://maharajatickets.com/" target="_blank">Movie Tickets<br/><span class="smalltext">Bringing you the best of Indian Cinema</span></a></li>
                                             <li><a href="https://www.woodlandshk.com/"  target="_blank">Woodlands <br/><span class="smalltext">Indian Vegetarian Restaurant</span></a></li>
                                             <li><a href="https://www.helloindia.com.hk/"  target="_blank">Hello India <br/> <span class="smalltext">World Of Delicious Indian Cuisine</span>
                                                 </a>
                                             </li>
-                                            <li><a href="<?php echo site_url("maharaja-care")?>"  >Maharaja Care <br/> <span class="smalltext">Prevention is better than cure</span>
+                                            <li><a href="<?php echo site_url("maharaja-care") ?>"  >Maharaja Care <br/> <span class="smalltext">Prevention is better than cure</span>
                                                 </a>
                                             </li>
 
