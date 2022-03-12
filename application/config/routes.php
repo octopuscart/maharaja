@@ -60,4 +60,5 @@ $route['maharaja-care'] = 'Shop/maharajacare';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['paymentresult'] = 'PaymentGatway/paymentResult';
+$route['sitemap\.xml'] = "Sitemap/index";
 
