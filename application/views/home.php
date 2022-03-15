@@ -131,57 +131,7 @@ $this->load->view('layout/header');
     </div>
 
 
-    <div class="product2-area" ng-if="homeInit.offers.length">
-        <div class="container-fluid" >
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-title">
-                        <span class="title-bar-left"></span>
-                        <h2>Blockbuster Offers</h2>
-                        <span class="title-bar-right"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row featuredContainer">
-                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 homeproductblock {{globleCartData.products[product.id] ? 'activeproduct': '' }} " ng-repeat="product in homeInit.offers" >
-
-                    <div class="product-box1" >
-
-                        <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
-                             background-position: center;">
-
-                        </div>
-
-                        <div class="product-content-holder">
-                            <h3>
-                                <a href="#">{{product.title}}  <br>
-                                    <span style="font-size: 12px">{{product.short_description}} </span>
-                                </a>
-                                <span ><span  style="font-size: 12px;">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
-
-                            </h3>
-
-                            <div class="productbuttonscontainer">
-
-                                <button ng-click="addToCart(product.id, 1)" class="productbutton" style="    background: #d92229;
-                                        color: white;
-                                        border-color: #d92229;">Add To Cart</button>
-                                <button ng-click="addToBuy(product.id, 1)" type="button" class="productbutton">Buy Now</button>
-
-                            </div>  
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <img src="<?php echo base_url(); ?>assets/movies/moviebanner.jpg" alt="offer" style="width:100%">
-
-
+ 
 
     <div class="container block52">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="    margin-top: 24px;">
@@ -194,6 +144,8 @@ $this->load->view('layout/header');
             <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('/'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/cares-shares-1.jpg" alt=""></a></div>
         </div>
     </div>
+    
+    
   
     <div class="product2-area" ng-if="homeInit.homecategories.length">
         <div class="container-fluid" ng-repeat="categories in homeInit.homecategories">
@@ -246,6 +198,58 @@ $this->load->view('layout/header');
             </div>
         </div>
     </div>
+    
+       <div class="product2-area" ng-if="homeInit.offers.length">
+        <div class="container-fluid" >
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="section-title">
+                        <span class="title-bar-left"></span>
+                        <h2>Blockbuster Offers</h2>
+                        <span class="title-bar-right"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row featuredContainer">
+                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 homeproductblock {{globleCartData.products[product.id] ? 'activeproduct': '' }} " ng-repeat="product in homeInit.offers" >
+
+                    <div class="product-box1" >
+
+                        <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});      background-size: cover;
+                             background-position: center;">
+
+                        </div>
+
+                        <div class="product-content-holder">
+                            <h3>
+                                <a href="#">{{product.title}}  <br>
+                                    <span style="font-size: 12px">{{product.short_description}} </span>
+                                </a>
+                                <span ><span  style="font-size: 12px;">{{product.regular_price|currency:"<?php echo globle_currency; ?> "}}</span>{{product.price|currency:"<?php echo globle_currency; ?> "}}</span>
+
+                            </h3>
+
+                            <div class="productbuttonscontainer">
+
+                                <button ng-click="addToCart(product.id, 1)" class="productbutton" style="    background: #d92229;
+                                        color: white;
+                                        border-color: #d92229;">Add To Cart</button>
+                                <button ng-click="addToBuy(product.id, 1)" type="button" class="productbutton">Buy Now</button>
+
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <img src="<?php echo base_url(); ?>assets/movies/moviebanner.jpg" alt="offer" style="width:100%">
+
+
 
     <video autoplay loop muted poster="screenshot.jpg" id="background">
         <source src="<?php echo base_url(); ?>assets/sliders/maharajamart.mp4" type="video/mp4">
