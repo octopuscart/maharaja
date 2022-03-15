@@ -115,11 +115,11 @@ $this->load->view('layout/header');
                 foreach ($categories as $key => $value) {
                     ?>
                     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 text-center categoryfrontblock" >
-                        <a href="<?php echo site_url("Product/productList/1/".$value["id"]);?>">
-                        <img src="<?php echo ADMINURL."/assets/media/".$value["image"];?>"/>
-                        <h5 ><?php
-                        echo $value["category_name"];
-                        ?></h5>
+                        <a href="<?php echo site_url("Product/productList/1/" . $value["id"]); ?>">
+                            <img src="<?php echo ADMINURL . "/assets/media/" . $value["image"]; ?>"/>
+                            <h5 ><?php
+                                echo $value["category_name"];
+                                ?></h5>
                         </a>
                     </div>
                     <?php
@@ -131,22 +131,10 @@ $this->load->view('layout/header');
     </div>
 
 
- 
 
-    <div class="container block52">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="    margin-top: 24px;">
-            <div class="banner-top-left col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('contact'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/become-vendor-1.jpg" alt=""></a></div>
-            <div class="banner-top-center col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('privacy-policy'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/hk-delivery-1.jpg" alt=""></a></div>
-            <div class="banner-top-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajatickets.com/" target="_blank"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/favourite-banner-1.jpg" alt=""></a></div>
-        </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style="    margin-top: 24px;">
-            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/boutique-collection-1.jpg" alt=""></div>
-            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('/'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/cares-shares-1.jpg" alt=""></a></div>
-        </div>
-    </div>
-    
-    
-  
+
+
+
     <div class="product2-area" ng-if="homeInit.homecategories.length">
         <div class="container-fluid" ng-repeat="categories in homeInit.homecategories">
             <div class="row">
@@ -157,7 +145,7 @@ $this->load->view('layout/header');
                             {{categories.category_name}}<br/>
                         </h2>
                         <span class="title-bar-right"></span>
-                       
+
                     </div>
                 </div>
             </div>
@@ -168,7 +156,7 @@ $this->load->view('layout/header');
                     <div class="product-box1" >
 
                         <div class="product-img-holder" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}});          background-size: contain;
-    background-repeat: no-repeat;;
+                             background-repeat: no-repeat;;
                              background-position: center;">
 
                         </div>
@@ -193,13 +181,13 @@ $this->load->view('layout/header');
                         </div>
                     </div>
                 </div>
-                         <!--<a href="<?php echo site_url("Product/productList/1/");?>{{categories.id}}">View More</a>-->
+                         <!--<a href="<?php echo site_url("Product/productList/1/"); ?>{{categories.id}}">View More</a>-->
 
             </div>
         </div>
     </div>
-    
-       <div class="product2-area" ng-if="homeInit.offers.length">
+
+    <div class="product2-area" ng-if="homeInit.offers.length">
         <div class="container-fluid" >
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -247,9 +235,25 @@ $this->load->view('layout/header');
     </div>
 
 
-    <img src="<?php echo base_url(); ?>assets/movies/moviebanner.jpg" alt="offer" style="width:100%">
-
-
+    <div class="container block52">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="    margin-top: 24px;">
+            <div class="banner-top-left col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('contact'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/become-vendor-1.jpg" alt=""></a></div>
+            <div class="banner-top-center col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('privacy-policy'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/hk-delivery-1.jpg" alt=""></a></div>
+            <div class="banner-top-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="http://maharajatickets.com/" target="_blank"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/favourite-banner-1.jpg" alt=""></a></div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style="    margin-top: 24px;">
+            <div class="banner-bottom-left col-lg-8 col-md-8 col-sm-8 col-xs-12"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/boutique-collection-1.jpg" alt=""></div>
+            <div class="banner-bottom-right col-lg-4 col-md-4 col-sm-4 col-xs-12"><a href="<?php echo site_url('/'); ?>"><img class="img-responsive" src="<?php echo base_url(); ?>assets/images/ext/cares-shares-1.jpg" alt=""></a></div>
+        </div>
+    </div>
+    <hr/>
+    <div class="container block52">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="    margin-top: 24px;">
+            <div class="col-lg-12">
+                <img src="<?php echo base_url(); ?>assets/movies/moviebanner.jpg" alt="offer" style="width:100%">
+            </div>
+        </div>
+    </div>
 
     <video autoplay loop muted poster="screenshot.jpg" id="background">
         <source src="<?php echo base_url(); ?>assets/sliders/maharajamart.mp4" type="video/mp4">
