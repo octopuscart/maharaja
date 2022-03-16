@@ -221,5 +221,12 @@ span.keywordfooter {
         padding: 8px 12px;
         font-size: 15px;
     }
+
+    .tt-menu {
+        width: 110%;
+        margin: 10px 0;
+        margin-left: 0px;
+        padding: 8px 0;
+    }
 }
 

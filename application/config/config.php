@@ -33,11 +33,11 @@ $baselink = 'http://' . $_SERVER['SERVER_NAME'];
 switch ($baselink) {
     case "http://localhost":
         $baselinkmain = $baselink . $configuration['localpath'];
-        $config['index_page'] = strpos($baselink, '192.168') ? 'index.php/' : '';
+        $config['index_page'] = 'index.php/' ;
 
         break;
     case "http://192.168.3.2":
-        $config['index_page'] = strpos($baselink, '192.168') ? 'index.php/' : '';
+        $config['index_page'] =  'index.php/' ;
         $baselinkmain = $baselink . $configuration['localpath'];
         break;
     default:

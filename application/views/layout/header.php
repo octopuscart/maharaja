@@ -467,14 +467,14 @@ foreach ($parentmenu as $key => $value) {
         <div class="showonmobile ">
             <div class="search-area">
                 <div class="input-group" id="adv-search_mobile">
-                     <div class="input-group-btn">
+                     
+                    <input type="search" class="form-control typeahead" placeholder="Search Product" />
+                   <div class="input-group-btn">
                         <div class="btn-group" role="group">
 
                             <button type="button" class="btn btn-default btn-link"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                         </div>
                     </div>
-                    <input type="search" class="form-control typeahead" placeholder="Search Product" />
-                   
                 </div>
             </div>
         </div>
