@@ -276,13 +276,13 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     </div>
     <div class="media-body searchbody">
         <div class="row">
-            <div class="col-xs-5">
-                <h4 class="media-heading"><span class="textoverflow searchtitle">{{title}}</span></h4>
+            <div class="col-xs-5 col-md-5 col-sm-5">
+                <h4 class="media-heading searchtitle_body"><span class="textoverflow searchtitle">{{title}}</span></h4>
             </div>
-            <div class="col-xs-2 searchtext">
+            <div class="col-md-2 col-sm-2 searchtext">
                  ` + globlecurrency + ` {{price}}                
              </div>
-            <div class="col-xs-3">
+            <div class="col-xs-3 ">
                <div class="input-group input-group-sm searchinputgroup">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button" onclick="decQuantity(this)">-</button>
@@ -294,7 +294,34 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                      </span>
                 </div>
             </div>
-           <div class="col-xs-2">
+           <div class="col-xs-2 col-md-2 col-sm-2 ">
+                  <button class="btn btn-sm searchbutton" onclick="addToCartExt({{id}}, 1, this)">Add</button>  
+    
+             </div>
+       </div>
+    </div>
+  </li>
+</ul>`;
+    
+    var templatesearch_mobile = `
+<ul class="media-list">
+  <li class="media">
+    <div class="media-left">
+      <a href="#">
+                                   <div class="product_image_back serachbox-image" style="background:url( ` + imageurlg + `{{file_name}});"></div>
+
+      </a>
+    </div>
+    <div class="media-body searchbody">
+        <div class="row">
+            <div class="col-xs-6 col-md-5 col-sm-5">
+                <h4 class="media-heading searchtitle_body"><span class="textoverflow searchtitle">{{title}}</span></h4>
+            </div>
+            <div class="col-xs-3 col-md-2 col-sm-2 searchtext">
+                 ` + globlecurrency + ` {{price}}                
+             </div>
+      
+           <div class="col-xs-3 col-md-2 col-sm-2 ">
                   <button class="btn btn-sm searchbutton" onclick="addToCartExt({{id}}, 1, this)">Add</button>  
     
              </div>
@@ -312,7 +339,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                         <div class="col-xs-2">
                             {{price}}
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-xs-3 hideonmoile    ">
                             <div class="input-group input-group-sm">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button">+</button>
@@ -360,7 +387,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                         "Can't Find!, Try Something Else",
                         '</div>'
                     ].join('\n'),
-                    suggestion: Handlebars.compile(templatesearch2)
+                    suggestion: Handlebars.compile(checkmobile =="1" ? templatesearch_mobile: templatesearch2)
                 }
             });
 

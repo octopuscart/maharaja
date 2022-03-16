@@ -167,6 +167,7 @@ foreach ($parentmenu as $key => $value) {
                     var baseurl = "<?php echo site_url(); ?>";
                     var imageurlg = "<?php echo PRODUCTIMAGELINK; ?>";
                     var globlecurrency = "<?php echo globle_currency; ?>";
+                    var checkmobile = "<?php echo $this->agent->is_mobile(); ?>";
                     var avaiblecredits = 0;</script>
 
         <style>
@@ -462,3 +463,18 @@ foreach ($parentmenu as $key => $value) {
                 });
             })
         </script>
+
+        <div class="showonmobile ">
+            <div class="search-area">
+                <div class="input-group" id="adv-search_mobile">
+                     <div class="input-group-btn">
+                        <div class="btn-group" role="group">
+
+                            <button type="button" class="btn btn-default btn-link"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <input type="search" class="form-control typeahead" placeholder="Search Product" />
+                   
+                </div>
+            </div>
+        </div>

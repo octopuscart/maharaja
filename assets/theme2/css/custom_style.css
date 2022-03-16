@@ -239,6 +239,21 @@ b.barcomb-list {
         width: auto;
     }
 
+    .searchtitle {
+
+
+        float: left;
+        line-height: initial;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+
+    .textoverflow {
+        white-space: initial; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
 }
 
 .cart_header_stick{
@@ -1162,10 +1177,10 @@ b.barcomb-list {
 }
 
 .textoverflow {
-    white-space: nowrap;
+    white-space: initial; 
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 200px;;
+    width: 100%;
 }
 .cart-area > a > span {
     background: #111111;
@@ -1184,8 +1199,16 @@ b.barcomb-list {
 
 .searchtitle{
     float:left;
-    line-height: 40px;
+    line-height: initial;
     font-size: 14px;
+
+}
+
+.searchtitle_body{
+    justify-content: center;
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
 }
 
 .searchbody{
@@ -1651,13 +1674,33 @@ h5.theaterblocktext {
         font-size: 9px;
     }
 
-    
+
     .productlistborder {
-    border: 3px solid #EEEEEE;
-    display: block!important;
-    padding: 10px 10px;
-    text-align: center;
-}
+        border: 3px solid #EEEEEE;
+        display: block!important;
+        padding: 10px 10px;
+        text-align: center;
+    }
+
+    .searchtitle {
+
+
+        float: left;
+        line-height: initial;
+        font-size:12px;
+        vertical-align: middle;
+    }
+
+    .textoverflow {
+        white-space: initial; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+    .tt-dataset.tt-dataset-search-products {
+        overflow: auto;
+        max-height: auto;
+    }
 }
 
 
@@ -1667,15 +1710,15 @@ h5.theaterblocktext {
 }
 
 .blink_me {
-  animation: blinker 1s linear infinite;
+    animation: blinker 1s linear infinite;
     color:yellow;
 }
 
 @keyframes blinker {
-  50% {
-    /*opacity: 0.3;*/
-    color:red;
-  }
+    50% {
+        /*opacity: 0.3;*/
+        color:red;
+    }
 }
 
 

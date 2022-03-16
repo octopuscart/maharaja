@@ -114,10 +114,10 @@ $this->load->view('layout/header');
                 $categories = $query->result_array();
                 foreach ($categories as $key => $value) {
                     ?>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 text-center categoryfrontblock" >
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 text-center categoryfrontblock" >
                         <a href="<?php echo site_url("Product/productList/1/" . $value["id"]); ?>">
                             <img src="<?php echo ADMINURL . "/assets/media/" . $value["image"]; ?>"/>
-                            <h5 ><?php
+                            <h5 class="catgory_title_set"><?php
                                 echo $value["category_name"];
                                 ?></h5>
                         </a>

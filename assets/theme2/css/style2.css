@@ -147,7 +147,7 @@
 
 span.keywordfooter {
     text-transform: capitalize;
-     color: white; 
+    color: white; 
 }
 
 .footertable{
@@ -164,11 +164,11 @@ span.keywordfooter {
 
 
 .footertable td, .footertable th{
-      padding: 20px 10px;
+    padding: 20px 10px;
 }
 
 .productlistmeddile{
-      background: #EEEEEE;
+    background: #EEEEEE;
     height: 265px!important;
     padding: 20px 0px;
 }
@@ -194,3 +194,32 @@ span.keywordfooter {
     height:100px;
     width:100px;
 }
+
+@media only screen and (max-width: 479px) {
+    .categoryfrontblock {
+        height: 118px;
+        padding: 5px;
+        text-align: center;
+        border: 1px solid #ffeb3b;
+    }
+    .categoryfrontblock img{
+        height:50px;
+        width:50px;
+    }
+    .categoryfrontblock h5 {
+        font-size: 12px;
+        line-height: normal;
+        margin-top: 10px;
+    }
+    .section-title h2 {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+    .typeahead, .tt-query, .tt-hint {
+        width: 396px;
+        height: 30px;
+        padding: 8px 12px;
+        font-size: 15px;
+    }
+}
+
