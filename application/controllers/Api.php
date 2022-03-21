@@ -70,8 +70,8 @@ class Api extends REST_Controller {
         $session_cart['nearpricenote'] = "";
         $nearamountcheck = SHPPING_MINVALUE_VIEW - 60;
         if (SHPPING_MINVALUE_VIEW > $totalamount && $totalamount > $nearamountcheck) {
-            $session_cart['nearpricenote'] = "Cart Value: $$totalamount<br/>Your cart value is near by $" . SHPPING_MINVALUE_VIEW . ", order more to get free delivery..<br/><span class='smallnotepopup'>" .
-                    "Free Delivery In Other Location (On Order value > $" . SHPPING_MINVALUE_VIEW . ".)</span>";
+            $session_cart['nearpricenote'] = "Cart Value: $$totalamount, Your cart value is near by $" . SHPPING_MINVALUE_VIEW . ", order more to get free delivery.." .
+                    "Free Delivery In Other Location (On Order value > $" . SHPPING_MINVALUE_VIEW . ".)";
         }
 
 

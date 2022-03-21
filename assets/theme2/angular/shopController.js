@@ -61,10 +61,10 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             $scope.globleCartData = rdata.data;
             $scope.globleCartData['grand_total'] = $scope.globleCartData['total_price'];
             $(".cartquantity").text($scope.globleCartData.total_quantity);
-            var carturl = baseurl+"Cart/details";
-            var mhref = '<a href="'+carturl+'" class="meanmenu-reveal cartopen" style="right: 40px;left: auto;text-align: center;text-indent: 0px;font-size: 25px;"><i class="fa fa-shopping-cart"></i><b class="cartquantity">' + ($scope.globleCartData.total_quantity ? $scope.globleCartData.total_quantity : 0) + '</b></a>';
+            var carturl = baseurl + "Cart/details";
+            var mhref = '<a href="' + carturl + '" class="meanmenu-reveal cartopen" style="right: 40px;left: auto;text-align: center;text-indent: 0px;font-size: 25px;"><i class="fa fa-shopping-cart"></i><b class="cartquantity">' + ($scope.globleCartData.total_quantity ? $scope.globleCartData.total_quantity : 0) + '</b></a>';
             $(".logo-mobile-menu").after(mhref);
-    
+
 
         }, function (r) {
         })
@@ -319,14 +319,25 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     </div>
     <div class="media-body searchbody">
         <div class="row">
-            <div class="col-xs-6 col-md-5 col-sm-5">
+            <div class="col-xs-5 col-md-5 col-sm-5">
                 <h4 class="media-heading searchtitle_body"><span class="textoverflow searchtitle">{{title}}</span></h4>
             </div>
-            <div class="col-xs-3 col-md-2 col-sm-2 searchtext">
-                 ` + globlecurrency + ` {{price}}                
-             </div>
+     <div class="col-xs-4 text-center no_padding ">
+     ` + globlecurrency + ` {{price}}   <br/>
+               <div class="input-group input-group-sm searchinputgroup">
+                    <span class="input-group-btn btn-xs">
+                        <button class="btn btn-default btn-xs" type="button" onclick="decQuantity(this)">-</button>
+                    </span>
+                      <span class="cartquantitysearch">1</span>
+            
+                    <span class="input-group-btn" >
+                        <button class="btn btn-default  btn-xs incbutton" type="button" onclick="incQuantity(this)">+</button>
+                     </span>
+                </div>
+            </div>
+     
       
-           <div class="col-xs-3 col-md-2 col-sm-2 ">
+           <div class="col-xs-3 col-md-2 col-sm-2 no_padding text-center ">
                   <button class="btn btn-sm searchbutton" onclick="addToCartExt2({{id}}, 1, this)">Add</button>  
     
              </div>
