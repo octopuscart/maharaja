@@ -327,7 +327,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
              </div>
       
            <div class="col-xs-3 col-md-2 col-sm-2 ">
-                  <button class="btn btn-sm searchbutton" onclick="addToCartExt({{id}}, 1, this)">Add</button>  
+                  <button class="btn btn-sm searchbutton" onclick="addToCartExt2({{id}}, 1, this)">Add</button>  
     
              </div>
        </div>
@@ -356,7 +356,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                             </div>
                         </div>
                         <div class="col-xs-2">
-                            <button class="btn btn-xs" onclick="addToCartExt({{id}}, 1)">Add</button>
+                            <button class="btn btn-xs" onclick="addToCartExt({{id}}, 1,)">Add</button>
                         </div>
                     </div>
                 </div>`;
@@ -560,6 +560,12 @@ App.controller('ProductDetails', function ($scope, $http, $timeout, $interval, $
 
 function addToCartExt(productid, qnty, obj) {
     var qntyobj = $(obj).parents(".searchbody").find(".cartquantitysearch").text();
+
+    angular.element(document.getElementById("ShopController")).scope().addToCart(productid, qntyobj);
+}
+
+function addToCartExt2(productid, qnty, obj) {
+    var qntyobj = qnty;
 
     angular.element(document.getElementById("ShopController")).scope().addToCart(productid, qntyobj);
 }
