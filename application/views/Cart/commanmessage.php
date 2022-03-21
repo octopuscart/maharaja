@@ -45,7 +45,7 @@
 
             </h4>
             <?php
-            if($showdeliverynote){
+            if(isset($showdeliverynote)){
             ?>
             <h4 class="text-center blink_me" >
                 <hr/>

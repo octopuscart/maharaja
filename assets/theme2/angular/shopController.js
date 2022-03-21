@@ -61,6 +61,11 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
             $scope.globleCartData = rdata.data;
             $scope.globleCartData['grand_total'] = $scope.globleCartData['total_price'];
             $(".cartquantity").text($scope.globleCartData.total_quantity);
+            var carturl = baseurl+"Cart/details";
+            var mhref = '<a href="'+carturl+'" class="meanmenu-reveal cartopen" style="right: 40px;left: auto;text-align: center;text-indent: 0px;font-size: 25px;"><i class="fa fa-shopping-cart"></i><b class="cartquantity">' + ($scope.globleCartData.total_quantity ? $scope.globleCartData.total_quantity : 0) + '</b></a>';
+            $(".logo-mobile-menu").after(mhref);
+    
+
         }, function (r) {
         })
     }
@@ -302,7 +307,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
     </div>
   </li>
 </ul>`;
-    
+
     var templatesearch_mobile = `
 <ul class="media-list">
   <li class="media">
@@ -387,7 +392,7 @@ App.controller('ShopController', function ($scope, $http, $timeout, $interval, $
                         "Can't Find!, Try Something Else",
                         '</div>'
                     ].join('\n'),
-                    suggestion: Handlebars.compile(checkmobile =="1" ? templatesearch_mobile: templatesearch2)
+                    suggestion: Handlebars.compile(checkmobile == "1" ? templatesearch_mobile : templatesearch2)
                 }
             });
 
@@ -501,7 +506,7 @@ App.controller('HomeController', function ($scope, $http, $timeout, $interval, $
     var url = baseurl + "Api/productListOffersApi/";
     $http.get(url).then(function (rdata) {
         $scope.homeInit.offers = rdata.data;
-       
+
     }, function () {
 
     })
@@ -510,7 +515,7 @@ App.controller('HomeController', function ($scope, $http, $timeout, $interval, $
     var url = baseurl + "Api/productListCategoryApi";
     $http.get(url).then(function (rdata) {
         $scope.homeInit.homecategories = rdata.data;
-         $timeout(function(){
+        $timeout(function () {
             $scope.activeSlider()
         }, 1500);
     }, function () {
