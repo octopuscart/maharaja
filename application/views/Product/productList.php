@@ -204,7 +204,12 @@ $image2 = "";
                                     <div class="addedtocard"><i class="fa fa-cart-plus"></i></div>
 
 
-                                    <div class="product-img-holder" >
+                                    <div class="product-img-holder" ng-if="product.hasvarient == 1">
+                                        <img src="<?php echo base_url(); ?>assets/images/defaultProduct.png" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.varients[product.selectedobject].file_name}}); background-size: contain;
+                                             background-position: center;
+                                             background-repeat: no-repeat;" />
+                                    </div>
+                                    <div class="product-img-holder" ng-if="product.hasvarient == 0">
                                         <img src="<?php echo base_url(); ?>assets/images/defaultProduct.png" style="background: url(<?php echo PRODUCTIMAGELINK; ?>{{product.file_name}}); background-size: contain;
                                              background-position: center;
                                              background-repeat: no-repeat;" />

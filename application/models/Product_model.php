@@ -132,13 +132,13 @@ where pa.product_id = $product_id group by attribute_value_id";
 
     function getProductVeriants($product_id) {
 
-        $this->db->select("id, title, short_description, description,  regular_price, sale_price, price, stock_status");
+        $this->db->select("id, title, short_description, description, file_name,  regular_price, sale_price, price, stock_status");
         $this->db->where('id', $product_id);
         $this->db->where('status', "1");
         $query = $this->db->get('products');
         $product_main = $query->row_array();
 
-        $this->db->select("id, title,  short_description, description,   regular_price, sale_price, price, stock_status");
+        $this->db->select("id, title,  short_description, description, file_name,  regular_price, sale_price, price, stock_status");
         $this->db->where('variant_product_of', $product_id);
          $this->db->where('status', "1");
         $query = $this->db->get('products');
